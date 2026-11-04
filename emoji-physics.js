@@ -1,3 +1,4 @@
+import { playUiSound } from "./ui-sound.js?v=20261104-1";
 const EMOJIS = ["📚","🎧","📝","🎓","📖","✏️","💡","🧠","🎯","🏆","📅","💬","🔤","📌","⭐","💯","🍀","🚀","🧩","🎵","📕","📗","✨","☕"];
 let cleanup = () => {};
 
@@ -136,6 +137,7 @@ export function initEmojiPhysics(arena) {
       if (body.x < body.radius) { body.x = body.radius; body.vx = Math.abs(body.vx) * 0.55; }
       if (body.x > width - body.radius) { body.x = width - body.radius; body.vx = -Math.abs(body.vx) * 0.55; }
       if (body.y > height - body.radius) {
+        if (body.vy > 2.2) playUiSound("collision", body.vy / 10);
         body.y = height - body.radius;
         body.vy = Math.abs(body.vy) < 1 ? 0 : -Math.abs(body.vy) * 0.42;
         body.vx *= 0.92;

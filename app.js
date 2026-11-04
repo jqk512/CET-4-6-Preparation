@@ -1,4 +1,5 @@
-import { initEmojiPhysics, destroyEmojiPhysics } from "./emoji-physics.js?v=20261104-2";
+import { initEmojiPhysics, destroyEmojiPhysics } from "./emoji-physics.js?v=20261104-3";
+import { playUiSound, startCharge, updateCharge, stopCharge } from "./ui-sound.js?v=20261104-1";
 const app = document.getElementById("app");
 const ORIGIN = "https://couldyyy9.github.io/cet-website/library";
 const STORE = "cet46-prep:v1";
@@ -64,7 +65,7 @@ function examFrame(content,level="cet4"){
   app.innerHTML=`<main class="exam-app level-${level} ${state.largeText?"text-large":""}">${showcaseHeader("papers")}<div class="exam-workspace">${content}</div><footer class="exam-footer">CET-4/6 Preparation <span>Practice at your own pace.</span></footer></main>`;
 }
 function showcaseHeader(active){
-  return `<header class="showcase-header"><a class="showcase-brand" href="#/"><span class="showcase-symbol">C<span>4/6</span></span><span>CET-4/6<br><small>PREPARATION</small></span></a><nav aria-label="Main navigation"><a class="${active==="home"?"selected":""}" href="#/">Home</a><a class="${active==="papers"?"selected":""}" href="#/practice">Exam papers</a><a class="${active==="mistakes"?"selected":""}" href="#/mistakes">Mistakes</a></nav></header>`;
+  return `<header class="showcase-header"><a class="showcase-brand" href="#/"><img class="showcase-logo" src="./assets/logo.png" alt="CET logo"><span>CET-4/6<br><small>PREPARATION</small></span></a><nav aria-label="Main navigation"><a class="${active==="home"?"selected":""}" href="#/">Home</a><a class="${active==="papers"?"selected":""}" href="#/practice">Exam papers</a><a class="${active==="mistakes"?"selected":""}" href="#/mistakes">Mistakes</a></nav></header>`;
 }
 function trafficGlyph(kind){
   const path=kind==="close"?'<path d="M4.5 4.5l7 7m0-7-7 7"/>':kind==="minimize"?'<path d="M4 8h8"/>':'<path d="M3.5 12.5l4-4m-4 4V9.5m0 3h3m6-9-4 4m4-4v3m0-3h-3"/>';
@@ -110,6 +111,7 @@ function practice(){
 }
 function activateLevel(level){
   const stack=app.querySelector(".selector-stack");if(!stack)return;
+  if(state.level!==level)playUiSound("switch");
   state.level=level;stack.dataset.activeLevel=level;
   stack.querySelectorAll(".selector-stage").forEach(stage=>{
     const front=stage.dataset.panelLevel===level;
@@ -128,7 +130,7 @@ function initPaperCarousels(){
     const stage=rail.closest(".selector-stage");
     const cards=[...rail.children],slider=stage.querySelector(".sling-slider"),ball=slider.querySelector(".sling-ball"),fill=slider.querySelector(".sling-fill"),landing=slider.querySelector(".sling-landing"),landingText=slider.querySelector(".sling-landing b"),bands=slider.querySelector(".sling-bands"),flight=slider.querySelector(".sling-flight"),svg=slider.querySelector(".sling-overlay"),label=stage.querySelector(".carousel-progress-label");
     const clamp=(value,min,max)=>Math.max(min,Math.min(max,value));
-    let step=0,centers=[],railCenter=0,frame=0,dragFrame=0,railAnimation=0,ballAnimation=0,drag=null,flying=false;
+    let step=0,centers=[],railCenter=0,frame=0,dragFrame=0,railAnimation=0,ballAnimation=0,drag=null,flying=false,lastSoundIndex=1;
     const measure=()=>{
       step=cards[0].offsetWidth+(parseFloat(getComputedStyle(rail).gap)||0);
       centers=cards.map(card=>card.offsetLeft+card.offsetWidth/2);
@@ -148,6 +150,7 @@ function initPaperCarousels(){
     const update=()=>{
       frame=0;
       const scroll=rail.scrollLeft,index=clamp(Math.round(scroll/step)+1,1,cards.length);
+      if(index!==lastSoundIndex){if(stage.classList.contains("is-front"))playUiSound("carousel");lastSoundIndex=index}
       if(!drag&&!flying)setRest(index);
       for(let i=0;i<cards.length;i++){
         const distance=(centers[i]-scroll-railCenter)/step,tile=cards[i];
@@ -172,7 +175,7 @@ function initPaperCarousels(){
     const resetSling=()=>{
       cancelAnimationFrame(dragFrame);dragFrame=0;
       cancelAnimationFrame(ballAnimation);ballAnimation=0;
-      drag=null;flying=false;clearEffect();
+      drag=null;flying=false;stopCharge(false);clearEffect();
       setRest(clamp(Math.round(rail.scrollLeft/step)+1,1,cards.length));
     };
     const pointerPosition=event=>{
@@ -183,6 +186,7 @@ function initPaperCarousels(){
     const paintDrag=()=>{
       if(!drag)return;
       const point=drag.point,target=drag.mode==="sling"?projectedX(point):clamp(point.x,0,sliderWidth());
+      updateCharge(Math.hypot(point.x-drag.anchorX,point.y)/Math.max(80,sliderWidth()*.6));
       ball.style.left=point.x+"px";ball.style.top=`calc(50% + ${point.y}px)`;
       landing.style.left=target+"px";landing.style.opacity="1";landingText.textContent=String(indexFor(target)).padStart(2,"0");
       if(drag.mode==="sling"){
@@ -195,6 +199,7 @@ function initPaperCarousels(){
       resetSling();cancelAnimationFrame(railAnimation);railAnimation=0;
       const index=clamp(Math.round(rail.scrollLeft/step)+1,1,cards.length),point=pointerPosition(event),anchorX=xFor(index);
       drag={id:event.pointerId,point,anchorX,origin:point,mode:Math.abs(point.x-anchorX)<24?"sling":"seek"};
+      startCharge();
       slider.classList.add("is-dragging");slider.setPointerCapture(event.pointerId);paintDrag();event.preventDefault();
     });
     slider.addEventListener("pointermove",event=>{if(!drag||event.pointerId!==drag.id)return;drag.point=pointerPosition(event);if(!dragFrame)dragFrame=requestAnimationFrame(()=>{dragFrame=0;paintDrag()})});
@@ -205,7 +210,7 @@ function initPaperCarousels(){
       const {point,origin,anchorX,mode}=drag,moved=Math.hypot(point.x-origin.x,point.y-origin.y)>5;
       const targetX=mode==="seek"?point.x:moved?projectedX(point):anchorX;
       const targetIndex=indexFor(targetX),endX=xFor(targetIndex),startX=point.x,startY=point.y;
-      drag=null;slider.classList.remove("is-dragging");slider.classList.add("is-flying");flying=true;
+      drag=null;stopCharge(moved);slider.classList.remove("is-dragging");slider.classList.add("is-flying");flying=true;
       if(slider.hasPointerCapture(event.pointerId))slider.releasePointerCapture(event.pointerId);
       slider.setAttribute("aria-valuenow",String(targetIndex));label.textContent=String(targetIndex).padStart(2,"0");
       landing.style.left=endX+"px";landingText.textContent=String(targetIndex).padStart(2,"0");
@@ -249,7 +254,7 @@ function initPaperCarousels(){
     rail.addEventListener("click",event=>{if(moved){event.preventDefault();event.stopPropagation();moved=false}},true);
     const observer=typeof ResizeObserver!=="undefined"?new ResizeObserver(measure):null;
     if(observer)observer.observe(rail);else window.addEventListener("resize",measure,{passive:true});
-    cleanups.push(()=>{observer?.disconnect();window.removeEventListener("resize",measure);window.removeEventListener("blur",handleBlur);document.removeEventListener("visibilitychange",handleVisibility);cancelAnimationFrame(frame);cancelAnimationFrame(dragFrame);cancelAnimationFrame(railAnimation);cancelAnimationFrame(ballAnimation)});
+    cleanups.push(()=>{stopCharge(false);observer?.disconnect();window.removeEventListener("resize",measure);window.removeEventListener("blur",handleBlur);document.removeEventListener("visibilitychange",handleVisibility);cancelAnimationFrame(frame);cancelAnimationFrame(dragFrame);cancelAnimationFrame(railAnimation);cancelAnimationFrame(ballAnimation)});
     measure();
   });
   state.carouselCleanup=()=>cleanups.forEach(cleanup=>cleanup());
@@ -383,6 +388,7 @@ function mistakes(){
 }
 function rotateMistakeFolders(step){
   const length=mistakeFolders().length;if(length<2)return;
+  playUiSound("folder");
   state.mistakeIndex=(state.mistakeIndex+step+length)%length;
   mistakes();
 }
@@ -447,6 +453,7 @@ function toggleTextWindow(){
 }
 function render(){
   state.route=currentRoute();
+  if(state.route.startsWith("/exam/"))stopCharge(false);
   if(!state.manifest)return;
   if(app.querySelector(".emoji-arena"))destroyEmojiPhysics();
   if(state.carouselCleanup){state.carouselCleanup();state.carouselCleanup=null}
@@ -460,12 +467,16 @@ function render(){
     exam();
   } else go("/");
 }
+document.addEventListener("click",event=>{
+  const control=event.target.closest("a,button");
+  if(control&&!control.closest("#support-root")&&!control.matches("[data-select-level],[data-folder-prev],[data-folder-next],[data-folder-index]"))playUiSound("click");
+},true);
 app.addEventListener("click",e=>{
   if(!e.target.closest(".inline-answer"))closeRadialMenus();
   const t=e.target.closest("[data-open],[data-open-listening],[data-route],[data-section],[data-answer],[data-jump],[data-submit],[data-reset],[data-master],[data-export],[data-import],[data-carousel],[data-select-level],[data-expand-level],[data-ui-control],[data-close-text-window],[data-radial-toggle],[data-radial-choice],[data-folder-index],[data-folder-item],[data-folder-prev],[data-folder-next],[data-folder-close],[data-open-question]");
   if(!t)return;
   if(t.dataset.selectLevel){activateLevel(t.dataset.selectLevel);return}
-  if(t.dataset.folderIndex!==undefined){const index=Number(t.dataset.folderIndex);if(index===state.mistakeIndex){state.mistakeOpen=mistakeFolders()[index]?.examKey;state.mistakeItem=0}else state.mistakeIndex=index;mistakes();return}
+  if(t.dataset.folderIndex!==undefined){const index=Number(t.dataset.folderIndex);if(index===state.mistakeIndex){playUiSound("click");state.mistakeOpen=mistakeFolders()[index]?.examKey;state.mistakeItem=0}else{playUiSound("folder");state.mistakeIndex=index}mistakes();return}
   if(t.dataset.folderItem!==undefined){state.mistakeItem=Number(t.dataset.folderItem);mistakes();return}
   if(t.dataset.folderPrev){rotateMistakeFolders(-1);return}
   if(t.dataset.folderNext){rotateMistakeFolders(1);return}
