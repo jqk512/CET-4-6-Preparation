@@ -78,7 +78,6 @@
   .showcase-header{top:22px;left:21px;right:21px}
   .showcase-header nav{gap:11px}
   .showcase-header nav a{font-size:9px}
-  .showcase-header nav a:nth-child(3),.showcase-header nav a:nth-child(4){display:none}
   .landing-copy{top:22%;left:22px;right:22px}
   .landing-copy h1{font-size:clamp(38px,10vw,58px);line-height:1.1;margin:20px 0 14px}
   .landing-copy h1 br{display:none}
