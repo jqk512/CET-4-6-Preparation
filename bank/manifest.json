@@ -1,1 +1,799 @@
-{"generatedAt":"2026-11-05T06:15:33.712398+00:00","totalQuestions":1314,"examCount":28,"exams":[{"level":"cet4","id":"2025_12_1","title":"2025年12月 第1套","year":2025,"month":12,"set":"1","hasAudio":true,"readingOnly":false,"counts":{"total":55,"listening":25,"cloze":10,"matching":10,"reading":10},"file":"cet4_2025_12_1.json"},{"level":"cet4","id":"2025_12_2","title":"2025年12月 第2套","year":2025,"month":12,"set":"2","hasAudio":true,"readingOnly":false,"counts":{"total":55,"listening":25,"cloze":10,"matching":10,"reading":10},"file":"cet4_2025_12_2.json"},{"level":"cet4","id":"2025_12_3","title":"2025年12月 第3套","year":2025,"month":12,"set":"3","hasAudio":false,"readingOnly":true,"counts":{"total":30,"listening":0,"cloze":10,"matching":10,"reading":10},"file":"cet4_2025_12_3.json"},{"level":"cet4","id":"2025_06_1","title":"2025年6月 第1套","year":2025,"month":6,"set":"1","hasAudio":true,"readingOnly":false,"counts":{"total":55,"listening":25,"cloze":10,"matching":10,"reading":10},"file":"cet4_2025_06_1.json"},{"level":"cet4","id":"2025_06_2","title":"2025年6月 第2套","year":2025,"month":6,"set":"2","hasAudio":true,"readingOnly":false,"counts":{"total":55,"listening":25,"cloze":10,"matching":10,"reading":10},"file":"cet4_2025_06_2.json"},{"level":"cet4","id":"2025_06_3","title":"2025年6月 第3套","year":2025,"month":6,"set":"3","hasAudio":false,"readingOnly":true,"counts":{"total":30,"listening":0,"cloze":10,"matching":10,"reading":10},"file":"cet4_2025_06_3.json"},{"level":"cet4","id":"2024_12_1","title":"2024年12月 第1套","year":2024,"month":12,"set":"1","hasAudio":true,"readingOnly":false,"counts":{"total":55,"listening":25,"cloze":10,"matching":10,"reading":10},"file":"cet4_2024_12_1.json"},{"level":"cet4","id":"2024_12_2","title":"2024年12月 第2套","year":2024,"month":12,"set":"2","hasAudio":true,"readingOnly":false,"counts":{"total":55,"listening":25,"cloze":10,"matching":10,"reading":10},"file":"cet4_2024_12_2.json"},{"level":"cet4","id":"2024_12_3","title":"2024年12月 第3套","year":2024,"month":12,"set":"3","hasAudio":false,"readingOnly":true,"counts":{"total":30,"listening":0,"cloze":10,"matching":10,"reading":10},"file":"cet4_2024_12_3.json"},{"level":"cet4","id":"2024_06_1","title":"2024年6月 第1套","year":2024,"month":6,"set":"1","hasAudio":true,"readingOnly":false,"counts":{"total":55,"listening":25,"cloze":10,"matching":10,"reading":10},"file":"cet4_2024_06_1.json"},{"level":"cet4","id":"2024_06_2","title":"2024年6月 第2套","year":2024,"month":6,"set":"2","hasAudio":true,"readingOnly":false,"counts":{"total":55,"listening":25,"cloze":10,"matching":10,"reading":10},"file":"cet4_2024_06_2.json"},{"level":"cet4","id":"2024_06_3","title":"2024年6月 第3套","year":2024,"month":6,"set":"3","hasAudio":false,"readingOnly":true,"counts":{"total":30,"listening":0,"cloze":10,"matching":10,"reading":10},"file":"cet4_2024_06_3.json"},{"level":"cet4","id":"2023_06_1","title":"2023年6月 第1套","year":2023,"month":6,"set":"1","hasAudio":true,"readingOnly":false,"counts":{"total":55,"listening":25,"cloze":10,"matching":10,"reading":10},"file":"cet4_2023_06_1.json"},{"level":"cet4","id":"2023_06_2","title":"2023年6月 第2套","year":2023,"month":6,"set":"2","hasAudio":true,"readingOnly":false,"counts":{"total":55,"listening":25,"cloze":10,"matching":10,"reading":10},"file":"cet4_2023_06_2.json"},{"level":"cet4","id":"2023_06_3","title":"2023年6月 第3套","year":2023,"month":6,"set":"3","hasAudio":false,"readingOnly":true,"counts":{"total":30,"listening":0,"cloze":10,"matching":10,"reading":10},"file":"cet4_2023_06_3.json"},{"level":"cet4","id":"2023_03_1","title":"2023年3月 第1套","year":2023,"month":3,"set":"1","hasAudio":true,"readingOnly":false,"counts":{"total":55,"listening":25,"cloze":10,"matching":10,"reading":10},"file":"cet4_2023_03_1.json"},{"level":"cet6","id":"2025_12_1","title":"2025年12月 第1套","year":2025,"month":12,"set":"1","hasAudio":true,"readingOnly":false,"counts":{"total":55,"listening":25,"cloze":10,"matching":10,"reading":10},"file":"cet6_2025_12_1.json"},{"level":"cet6","id":"2025_12_2","title":"2025年12月 第2套","year":2025,"month":12,"set":"2","hasAudio":true,"readingOnly":false,"counts":{"total":55,"listening":25,"cloze":10,"matching":10,"reading":10},"file":"cet6_2025_12_2.json"},{"level":"cet6","id":"2025_12_3","title":"2025年12月 第3套","year":2025,"month":12,"set":"3","hasAudio":false,"readingOnly":true,"counts":{"total":30,"listening":0,"cloze":10,"matching":10,"reading":10},"file":"cet6_2025_12_3.json"},{"level":"cet6","id":"2025_06_1","title":"2025年6月 第1套","year":2025,"month":6,"set":"1","hasAudio":true,"readingOnly":false,"counts":{"total":55,"listening":25,"cloze":10,"matching":10,"reading":10},"file":"cet6_2025_06_1.json"},{"level":"cet6","id":"2025_06_2","title":"2025年6月 第2套","year":2025,"month":6,"set":"2","hasAudio":true,"readingOnly":false,"counts":{"total":55,"listening":25,"cloze":10,"matching":10,"reading":10},"file":"cet6_2025_06_2.json"},{"level":"cet6","id":"2025_06_3","title":"2025年6月 第3套","year":2025,"month":6,"set":"3","hasAudio":false,"readingOnly":true,"counts":{"total":30,"listening":0,"cloze":10,"matching":10,"reading":10},"file":"cet6_2025_06_3.json"},{"level":"cet6","id":"2024_12_1","title":"2024年12月 第1套","year":2024,"month":12,"set":"1","hasAudio":true,"readingOnly":false,"counts":{"total":55,"listening":25,"cloze":10,"matching":10,"reading":10},"file":"cet6_2024_12_1.json"},{"level":"cet6","id":"2024_12_2","title":"2024年12月 第2套","year":2024,"month":12,"set":"2","hasAudio":true,"readingOnly":false,"counts":{"total":55,"listening":25,"cloze":10,"matching":10,"reading":10},"file":"cet6_2024_12_2.json"},{"level":"cet6","id":"2024_12_3","title":"2024年12月 第3套","year":2024,"month":12,"set":"3","hasAudio":false,"readingOnly":true,"counts":{"total":30,"listening":0,"cloze":10,"matching":10,"reading":10},"file":"cet6_2024_12_3.json"},{"level":"cet6","id":"2024_06_1","title":"2024年6月 第1套","year":2024,"month":6,"set":"1","hasAudio":true,"readingOnly":false,"counts":{"total":54,"listening":25,"cloze":10,"matching":9,"reading":10},"file":"cet6_2024_06_1.json"},{"level":"cet6","id":"2024_06_2","title":"2024年6月 第2套","year":2024,"month":6,"set":"2","hasAudio":true,"readingOnly":false,"counts":{"total":55,"listening":25,"cloze":10,"matching":10,"reading":10},"file":"cet6_2024_06_2.json"},{"level":"cet6","id":"2024_06_3","title":"2024年6月 第3套","year":2024,"month":6,"set":"3","hasAudio":false,"readingOnly":true,"counts":{"total":30,"listening":0,"cloze":10,"matching":10,"reading":10},"file":"cet6_2024_06_3.json"}]}
+{
+  "generatedAt": "2026-11-05T07:13:47.777832+00:00",
+  "totalQuestions": 2070,
+  "examCount": 44,
+  "exams": [
+    {
+      "level": "cet4",
+      "id": "2026_06_1",
+      "title": "2026年6月 第1套",
+      "year": 2026,
+      "month": 6,
+      "set": "1",
+      "hasAudio": true,
+      "readingOnly": false,
+      "counts": {
+        "total": 55,
+        "listening": 25,
+        "cloze": 10,
+        "matching": 10,
+        "reading": 10
+      },
+      "file": "cet4_2026_06_1.json"
+    },
+    {
+      "level": "cet4",
+      "id": "2026_06_2",
+      "title": "2026年6月 第2套",
+      "year": 2026,
+      "month": 6,
+      "set": "2",
+      "hasAudio": true,
+      "readingOnly": false,
+      "counts": {
+        "total": 55,
+        "listening": 25,
+        "cloze": 10,
+        "matching": 10,
+        "reading": 10
+      },
+      "file": "cet4_2026_06_2.json"
+    },
+    {
+      "level": "cet4",
+      "id": "2026_06_3",
+      "title": "2026年6月 第3套",
+      "year": 2026,
+      "month": 6,
+      "set": "3",
+      "hasAudio": false,
+      "readingOnly": true,
+      "counts": {
+        "total": 30,
+        "listening": 0,
+        "cloze": 10,
+        "matching": 10,
+        "reading": 10
+      },
+      "file": "cet4_2026_06_3.json"
+    },
+    {
+      "level": "cet4",
+      "id": "2025_12_1",
+      "title": "2025年12月 第1套",
+      "year": 2025,
+      "month": 12,
+      "set": "1",
+      "hasAudio": true,
+      "readingOnly": false,
+      "counts": {
+        "total": 55,
+        "listening": 25,
+        "cloze": 10,
+        "matching": 10,
+        "reading": 10
+      },
+      "file": "cet4_2025_12_1.json"
+    },
+    {
+      "level": "cet4",
+      "id": "2025_12_2",
+      "title": "2025年12月 第2套",
+      "year": 2025,
+      "month": 12,
+      "set": "2",
+      "hasAudio": true,
+      "readingOnly": false,
+      "counts": {
+        "total": 55,
+        "listening": 25,
+        "cloze": 10,
+        "matching": 10,
+        "reading": 10
+      },
+      "file": "cet4_2025_12_2.json"
+    },
+    {
+      "level": "cet4",
+      "id": "2025_12_3",
+      "title": "2025年12月 第3套",
+      "year": 2025,
+      "month": 12,
+      "set": "3",
+      "hasAudio": false,
+      "readingOnly": true,
+      "counts": {
+        "total": 30,
+        "listening": 0,
+        "cloze": 10,
+        "matching": 10,
+        "reading": 10
+      },
+      "file": "cet4_2025_12_3.json"
+    },
+    {
+      "level": "cet4",
+      "id": "2025_06_1",
+      "title": "2025年6月 第1套",
+      "year": 2025,
+      "month": 6,
+      "set": "1",
+      "hasAudio": true,
+      "readingOnly": false,
+      "counts": {
+        "total": 55,
+        "listening": 25,
+        "cloze": 10,
+        "matching": 10,
+        "reading": 10
+      },
+      "file": "cet4_2025_06_1.json"
+    },
+    {
+      "level": "cet4",
+      "id": "2025_06_2",
+      "title": "2025年6月 第2套",
+      "year": 2025,
+      "month": 6,
+      "set": "2",
+      "hasAudio": true,
+      "readingOnly": false,
+      "counts": {
+        "total": 55,
+        "listening": 25,
+        "cloze": 10,
+        "matching": 10,
+        "reading": 10
+      },
+      "file": "cet4_2025_06_2.json"
+    },
+    {
+      "level": "cet4",
+      "id": "2025_06_3",
+      "title": "2025年6月 第3套",
+      "year": 2025,
+      "month": 6,
+      "set": "3",
+      "hasAudio": false,
+      "readingOnly": true,
+      "counts": {
+        "total": 30,
+        "listening": 0,
+        "cloze": 10,
+        "matching": 10,
+        "reading": 10
+      },
+      "file": "cet4_2025_06_3.json"
+    },
+    {
+      "level": "cet4",
+      "id": "2024_12_1",
+      "title": "2024年12月 第1套",
+      "year": 2024,
+      "month": 12,
+      "set": "1",
+      "hasAudio": true,
+      "readingOnly": false,
+      "counts": {
+        "total": 55,
+        "listening": 25,
+        "cloze": 10,
+        "matching": 10,
+        "reading": 10
+      },
+      "file": "cet4_2024_12_1.json"
+    },
+    {
+      "level": "cet4",
+      "id": "2024_12_2",
+      "title": "2024年12月 第2套",
+      "year": 2024,
+      "month": 12,
+      "set": "2",
+      "hasAudio": true,
+      "readingOnly": false,
+      "counts": {
+        "total": 55,
+        "listening": 25,
+        "cloze": 10,
+        "matching": 10,
+        "reading": 10
+      },
+      "file": "cet4_2024_12_2.json"
+    },
+    {
+      "level": "cet4",
+      "id": "2024_12_3",
+      "title": "2024年12月 第3套",
+      "year": 2024,
+      "month": 12,
+      "set": "3",
+      "hasAudio": false,
+      "readingOnly": true,
+      "counts": {
+        "total": 30,
+        "listening": 0,
+        "cloze": 10,
+        "matching": 10,
+        "reading": 10
+      },
+      "file": "cet4_2024_12_3.json"
+    },
+    {
+      "level": "cet4",
+      "id": "2024_06_1",
+      "title": "2024年6月 第1套",
+      "year": 2024,
+      "month": 6,
+      "set": "1",
+      "hasAudio": true,
+      "readingOnly": false,
+      "counts": {
+        "total": 55,
+        "listening": 25,
+        "cloze": 10,
+        "matching": 10,
+        "reading": 10
+      },
+      "file": "cet4_2024_06_1.json"
+    },
+    {
+      "level": "cet4",
+      "id": "2024_06_2",
+      "title": "2024年6月 第2套",
+      "year": 2024,
+      "month": 6,
+      "set": "2",
+      "hasAudio": true,
+      "readingOnly": false,
+      "counts": {
+        "total": 55,
+        "listening": 25,
+        "cloze": 10,
+        "matching": 10,
+        "reading": 10
+      },
+      "file": "cet4_2024_06_2.json"
+    },
+    {
+      "level": "cet4",
+      "id": "2024_06_3",
+      "title": "2024年6月 第3套",
+      "year": 2024,
+      "month": 6,
+      "set": "3",
+      "hasAudio": false,
+      "readingOnly": true,
+      "counts": {
+        "total": 30,
+        "listening": 0,
+        "cloze": 10,
+        "matching": 10,
+        "reading": 10
+      },
+      "file": "cet4_2024_06_3.json"
+    },
+    {
+      "level": "cet4",
+      "id": "2023_12_1",
+      "title": "2023年12月 第1套",
+      "year": 2023,
+      "month": 12,
+      "set": "1",
+      "hasAudio": true,
+      "readingOnly": false,
+      "counts": {
+        "total": 55,
+        "listening": 25,
+        "cloze": 10,
+        "matching": 10,
+        "reading": 10
+      },
+      "file": "cet4_2023_12_1.json"
+    },
+    {
+      "level": "cet4",
+      "id": "2023_12_2",
+      "title": "2023年12月 第2套",
+      "year": 2023,
+      "month": 12,
+      "set": "2",
+      "hasAudio": true,
+      "readingOnly": false,
+      "counts": {
+        "total": 55,
+        "listening": 25,
+        "cloze": 10,
+        "matching": 10,
+        "reading": 10
+      },
+      "file": "cet4_2023_12_2.json"
+    },
+    {
+      "level": "cet4",
+      "id": "2023_12_3",
+      "title": "2023年12月 第3套",
+      "year": 2023,
+      "month": 12,
+      "set": "3",
+      "hasAudio": false,
+      "readingOnly": true,
+      "counts": {
+        "total": 30,
+        "listening": 0,
+        "cloze": 10,
+        "matching": 10,
+        "reading": 10
+      },
+      "file": "cet4_2023_12_3.json"
+    },
+    {
+      "level": "cet4",
+      "id": "2023_06_1",
+      "title": "2023年6月 第1套",
+      "year": 2023,
+      "month": 6,
+      "set": "1",
+      "hasAudio": true,
+      "readingOnly": false,
+      "counts": {
+        "total": 55,
+        "listening": 25,
+        "cloze": 10,
+        "matching": 10,
+        "reading": 10
+      },
+      "file": "cet4_2023_06_1.json"
+    },
+    {
+      "level": "cet4",
+      "id": "2023_06_2",
+      "title": "2023年6月 第2套",
+      "year": 2023,
+      "month": 6,
+      "set": "2",
+      "hasAudio": true,
+      "readingOnly": false,
+      "counts": {
+        "total": 55,
+        "listening": 25,
+        "cloze": 10,
+        "matching": 10,
+        "reading": 10
+      },
+      "file": "cet4_2023_06_2.json"
+    },
+    {
+      "level": "cet4",
+      "id": "2023_06_3",
+      "title": "2023年6月 第3套",
+      "year": 2023,
+      "month": 6,
+      "set": "3",
+      "hasAudio": false,
+      "readingOnly": true,
+      "counts": {
+        "total": 30,
+        "listening": 0,
+        "cloze": 10,
+        "matching": 10,
+        "reading": 10
+      },
+      "file": "cet4_2023_06_3.json"
+    },
+    {
+      "level": "cet4",
+      "id": "2023_03_1",
+      "title": "2023年3月 第1套",
+      "year": 2023,
+      "month": 3,
+      "set": "1",
+      "hasAudio": true,
+      "readingOnly": false,
+      "counts": {
+        "total": 55,
+        "listening": 25,
+        "cloze": 10,
+        "matching": 10,
+        "reading": 10
+      },
+      "file": "cet4_2023_03_1.json"
+    },
+    {
+      "level": "cet6",
+      "id": "2026_06_1",
+      "title": "2026年6月 第1套",
+      "year": 2026,
+      "month": 6,
+      "set": "1",
+      "hasAudio": true,
+      "readingOnly": false,
+      "counts": {
+        "total": 55,
+        "listening": 25,
+        "cloze": 10,
+        "matching": 10,
+        "reading": 10
+      },
+      "file": "cet6_2026_06_1.json"
+    },
+    {
+      "level": "cet6",
+      "id": "2026_06_2",
+      "title": "2026年6月 第2套",
+      "year": 2026,
+      "month": 6,
+      "set": "2",
+      "hasAudio": true,
+      "readingOnly": false,
+      "counts": {
+        "total": 55,
+        "listening": 25,
+        "cloze": 10,
+        "matching": 10,
+        "reading": 10
+      },
+      "file": "cet6_2026_06_2.json"
+    },
+    {
+      "level": "cet6",
+      "id": "2026_06_3",
+      "title": "2026年6月 第3套",
+      "year": 2026,
+      "month": 6,
+      "set": "3",
+      "hasAudio": false,
+      "readingOnly": true,
+      "counts": {
+        "total": 30,
+        "listening": 0,
+        "cloze": 10,
+        "matching": 10,
+        "reading": 10
+      },
+      "file": "cet6_2026_06_3.json"
+    },
+    {
+      "level": "cet6",
+      "id": "2025_12_1",
+      "title": "2025年12月 第1套",
+      "year": 2025,
+      "month": 12,
+      "set": "1",
+      "hasAudio": true,
+      "readingOnly": false,
+      "counts": {
+        "total": 55,
+        "listening": 25,
+        "cloze": 10,
+        "matching": 10,
+        "reading": 10
+      },
+      "file": "cet6_2025_12_1.json"
+    },
+    {
+      "level": "cet6",
+      "id": "2025_12_2",
+      "title": "2025年12月 第2套",
+      "year": 2025,
+      "month": 12,
+      "set": "2",
+      "hasAudio": true,
+      "readingOnly": false,
+      "counts": {
+        "total": 55,
+        "listening": 25,
+        "cloze": 10,
+        "matching": 10,
+        "reading": 10
+      },
+      "file": "cet6_2025_12_2.json"
+    },
+    {
+      "level": "cet6",
+      "id": "2025_12_3",
+      "title": "2025年12月 第3套",
+      "year": 2025,
+      "month": 12,
+      "set": "3",
+      "hasAudio": false,
+      "readingOnly": true,
+      "counts": {
+        "total": 30,
+        "listening": 0,
+        "cloze": 10,
+        "matching": 10,
+        "reading": 10
+      },
+      "file": "cet6_2025_12_3.json"
+    },
+    {
+      "level": "cet6",
+      "id": "2025_06_1",
+      "title": "2025年6月 第1套",
+      "year": 2025,
+      "month": 6,
+      "set": "1",
+      "hasAudio": true,
+      "readingOnly": false,
+      "counts": {
+        "total": 55,
+        "listening": 25,
+        "cloze": 10,
+        "matching": 10,
+        "reading": 10
+      },
+      "file": "cet6_2025_06_1.json"
+    },
+    {
+      "level": "cet6",
+      "id": "2025_06_2",
+      "title": "2025年6月 第2套",
+      "year": 2025,
+      "month": 6,
+      "set": "2",
+      "hasAudio": true,
+      "readingOnly": false,
+      "counts": {
+        "total": 55,
+        "listening": 25,
+        "cloze": 10,
+        "matching": 10,
+        "reading": 10
+      },
+      "file": "cet6_2025_06_2.json"
+    },
+    {
+      "level": "cet6",
+      "id": "2025_06_3",
+      "title": "2025年6月 第3套",
+      "year": 2025,
+      "month": 6,
+      "set": "3",
+      "hasAudio": false,
+      "readingOnly": true,
+      "counts": {
+        "total": 30,
+        "listening": 0,
+        "cloze": 10,
+        "matching": 10,
+        "reading": 10
+      },
+      "file": "cet6_2025_06_3.json"
+    },
+    {
+      "level": "cet6",
+      "id": "2024_12_1",
+      "title": "2024年12月 第1套",
+      "year": 2024,
+      "month": 12,
+      "set": "1",
+      "hasAudio": true,
+      "readingOnly": false,
+      "counts": {
+        "total": 55,
+        "listening": 25,
+        "cloze": 10,
+        "matching": 10,
+        "reading": 10
+      },
+      "file": "cet6_2024_12_1.json"
+    },
+    {
+      "level": "cet6",
+      "id": "2024_12_2",
+      "title": "2024年12月 第2套",
+      "year": 2024,
+      "month": 12,
+      "set": "2",
+      "hasAudio": true,
+      "readingOnly": false,
+      "counts": {
+        "total": 55,
+        "listening": 25,
+        "cloze": 10,
+        "matching": 10,
+        "reading": 10
+      },
+      "file": "cet6_2024_12_2.json"
+    },
+    {
+      "level": "cet6",
+      "id": "2024_12_3",
+      "title": "2024年12月 第3套",
+      "year": 2024,
+      "month": 12,
+      "set": "3",
+      "hasAudio": false,
+      "readingOnly": true,
+      "counts": {
+        "total": 30,
+        "listening": 0,
+        "cloze": 10,
+        "matching": 10,
+        "reading": 10
+      },
+      "file": "cet6_2024_12_3.json"
+    },
+    {
+      "level": "cet6",
+      "id": "2024_06_1",
+      "title": "2024年6月 第1套",
+      "year": 2024,
+      "month": 6,
+      "set": "1",
+      "hasAudio": true,
+      "readingOnly": false,
+      "counts": {
+        "total": 55,
+        "listening": 25,
+        "cloze": 10,
+        "matching": 10,
+        "reading": 10
+      },
+      "file": "cet6_2024_06_1.json"
+    },
+    {
+      "level": "cet6",
+      "id": "2024_06_2",
+      "title": "2024年6月 第2套",
+      "year": 2024,
+      "month": 6,
+      "set": "2",
+      "hasAudio": true,
+      "readingOnly": false,
+      "counts": {
+        "total": 55,
+        "listening": 25,
+        "cloze": 10,
+        "matching": 10,
+        "reading": 10
+      },
+      "file": "cet6_2024_06_2.json"
+    },
+    {
+      "level": "cet6",
+      "id": "2024_06_3",
+      "title": "2024年6月 第3套",
+      "year": 2024,
+      "month": 6,
+      "set": "3",
+      "hasAudio": false,
+      "readingOnly": true,
+      "counts": {
+        "total": 30,
+        "listening": 0,
+        "cloze": 10,
+        "matching": 10,
+        "reading": 10
+      },
+      "file": "cet6_2024_06_3.json"
+    },
+    {
+      "level": "cet6",
+      "id": "2023_12_1",
+      "title": "2023年12月 第1套",
+      "year": 2023,
+      "month": 12,
+      "set": "1",
+      "hasAudio": true,
+      "readingOnly": false,
+      "counts": {
+        "total": 55,
+        "listening": 25,
+        "cloze": 10,
+        "matching": 10,
+        "reading": 10
+      },
+      "file": "cet6_2023_12_1.json"
+    },
+    {
+      "level": "cet6",
+      "id": "2023_12_2",
+      "title": "2023年12月 第2套",
+      "year": 2023,
+      "month": 12,
+      "set": "2",
+      "hasAudio": true,
+      "readingOnly": false,
+      "counts": {
+        "total": 55,
+        "listening": 25,
+        "cloze": 10,
+        "matching": 10,
+        "reading": 10
+      },
+      "file": "cet6_2023_12_2.json"
+    },
+    {
+      "level": "cet6",
+      "id": "2023_12_3",
+      "title": "2023年12月 第3套",
+      "year": 2023,
+      "month": 12,
+      "set": "3",
+      "hasAudio": false,
+      "readingOnly": true,
+      "counts": {
+        "total": 30,
+        "listening": 0,
+        "cloze": 10,
+        "matching": 10,
+        "reading": 10
+      },
+      "file": "cet6_2023_12_3.json"
+    },
+    {
+      "level": "cet6",
+      "id": "2023_06_1",
+      "title": "2023年6月 第1套",
+      "year": 2023,
+      "month": 6,
+      "set": "1",
+      "hasAudio": true,
+      "readingOnly": false,
+      "counts": {
+        "total": 55,
+        "listening": 25,
+        "cloze": 10,
+        "matching": 10,
+        "reading": 10
+      },
+      "file": "cet6_2023_06_1.json"
+    },
+    {
+      "level": "cet6",
+      "id": "2023_06_2",
+      "title": "2023年6月 第2套",
+      "year": 2023,
+      "month": 6,
+      "set": "2",
+      "hasAudio": true,
+      "readingOnly": false,
+      "counts": {
+        "total": 55,
+        "listening": 25,
+        "cloze": 10,
+        "matching": 10,
+        "reading": 10
+      },
+      "file": "cet6_2023_06_2.json"
+    },
+    {
+      "level": "cet6",
+      "id": "2023_06_3",
+      "title": "2023年6月 第3套",
+      "year": 2023,
+      "month": 6,
+      "set": "3",
+      "hasAudio": false,
+      "readingOnly": true,
+      "counts": {
+        "total": 30,
+        "listening": 0,
+        "cloze": 10,
+        "matching": 10,
+        "reading": 10
+      },
+      "file": "cet6_2023_06_3.json"
+    },
+    {
+      "level": "cet6",
+      "id": "2023_03_1",
+      "title": "2023年3月 第1套",
+      "year": 2023,
+      "month": 3,
+      "set": "1",
+      "hasAudio": true,
+      "readingOnly": false,
+      "counts": {
+        "total": 55,
+        "listening": 25,
+        "cloze": 10,
+        "matching": 10,
+        "reading": 10
+      },
+      "file": "cet6_2023_03_1.json"
+    }
+  ]
+}

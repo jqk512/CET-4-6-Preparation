@@ -358,27 +358,33 @@ function mistakeTime(value){
 function nowTime(){
   return new Intl.DateTimeFormat("zh-CN",{year:"numeric",month:"2-digit",day:"2-digit",hour:"2-digit",minute:"2-digit",hour12:false}).format(new Date());
 }
-function mistakeFolderHtml(group,index,total){
+function mistakeFolderPosition(index,total){
   let offset=index-state.mistakeIndex;
   if(offset>total/2)offset-=total;
   if(offset<-total/2)offset+=total;
-  const distance=Math.abs(offset),colors=["#ee9da6","#91a9ce","#e8bd82","#9bbba9","#bea8c7","#9cb9c5"];
+  const distance=Math.abs(offset);
+  return {offset,style:`--folder-shift:${offset*300}px;--folder-shift-mobile:${offset*67}vw;--folder-scale:${Math.max(.62,1-distance*.14)};--folder-tilt:${offset*-5}deg;--folder-layer:${100-distance};--folder-opacity:${Math.max(.3,1-distance*.2)}`};
+}
+function mistakeFolderHtml(group,index,total){
+  const {offset,style:position}=mistakeFolderPosition(index,total);
+  const colors=["#ee9da6","#91a9ce","#e8bd82","#9bbba9","#bea8c7","#9cb9c5"];
   const color=colors[index%colors.length];
-  const style=`--folder-shift:${offset*300}px;--folder-shift-mobile:${offset*67}vw;--folder-scale:${Math.max(.62,1-distance*.14)};--folder-tilt:${offset*-5}deg;--folder-layer:${100-distance};--folder-opacity:${Math.max(.3,1-distance*.2)};--folder-color:${color}`;
+  const style=`${position};--folder-color:${color}`;
   const previews=group.items.slice(0,3).map((q,i)=>`<span class="folder-preview-card card-${i}"><small>QUESTION ${String(q.no).padStart(2,"0")}</small><strong>${esc(mistakeSnippet(q))}</strong></span>`).join("");
   return `<button class="mistake-folder ${offset===0?"is-center":""}" data-folder-index="${index}" style="${style}" aria-label="${esc(group.title)}，${group.items.length} 道错题${offset===0?"，点击打开":"，点击移到中央"}"><span class="folder-preview-cards">${previews}</span><span class="folder-tab"></span><span class="folder-pocket"><span class="folder-pocket-line"></span><span class="folder-pocket-title">${esc(group.title)}</span><span class="folder-pocket-count">${group.level==="cet4"?"CET-4":"CET-6"} / ${group.items.length} 题</span></span></button>`;
 }
 function mistakeDetailHtml(group){
   state.mistakeItem=Math.min(state.mistakeItem,group.items.length-1);
   const item=group.items[state.mistakeItem];
-  return `<section class="mistake-open"><button class="mistake-back" data-folder-close="1">← 返回文件夹</button><div class="mistake-open-heading"><div><span class="mistake-overline">${group.level==="cet4"?"CET-4":"CET-6"} / MISTAKES</span><h1>${esc(group.title)}</h1></div><span>${group.items.length} 道待复盘</span></div><div class="mistake-open-grid"><div class="mistake-file-list" aria-label="文件夹内的错题">${group.items.map((q,i)=>`<button class="mistake-file ${i===state.mistakeItem?"selected":""}" data-folder-item="${i}"><span>NO. ${String(q.no).padStart(2,"0")}</span><strong>${esc(mistakeSnippet(q))}</strong></button>`).join("")}</div><article class="mistake-file-detail"><div class="mistake-detail-meta"><div><span>错题时间</span><strong>${esc(mistakeTime(item.wrongAt))}</strong></div><div><span>原题位置</span><strong>${esc(questionLocation(item.no))}</strong></div><div><span>原卷名称</span><strong>${esc(item.title)}</strong></div></div><div class="mistake-detail-question"><span>QUESTION ${String(item.no).padStart(2,"0")}</span><h2>${esc(mistakeSnippet(item))}</h2></div><div class="mistake-answer-row"><div>你的答案 <strong>${esc(item.chosen||"未作答")}</strong></div><div>正确答案 <strong>${esc(item.answer)}</strong>${item.answerText?` <span>${esc(item.answerText)}</span>`:""}</div></div><div class="mistake-detail-actions"><button data-open-question="${esc(item.examKey)}:${item.no}">回到原题 ↗</button><button data-master="${esc(item.examKey)}:${item.no}">标记已掌握 ✓</button></div></article></div></section>`;
+  return `<section class="mistake-open" role="dialog" aria-modal="true" aria-label="${esc(group.title)}错题"><button class="mistake-back" data-folder-close="1">← 返回文件夹</button><div class="mistake-open-heading"><div><span class="mistake-overline">${group.level==="cet4"?"CET-4":"CET-6"} / MISTAKES</span><h1>${esc(group.title)}</h1></div><span>${group.items.length} 道待复盘</span></div><div class="mistake-open-grid"><div class="mistake-file-list" aria-label="文件夹内的错题">${group.items.map((q,i)=>`<button class="mistake-file ${i===state.mistakeItem?"selected":""}" data-folder-item="${i}"><span>NO. ${String(q.no).padStart(2,"0")}</span><strong>${esc(mistakeSnippet(q))}</strong></button>`).join("")}</div><article class="mistake-file-detail"><div class="mistake-detail-meta"><div><span>错题时间</span><strong>${esc(mistakeTime(item.wrongAt))}</strong></div><div><span>原题位置</span><strong>${esc(questionLocation(item.no))}</strong></div><div><span>原卷名称</span><strong>${esc(item.title)}</strong></div></div><div class="mistake-detail-question"><span>QUESTION ${String(item.no).padStart(2,"0")}</span><h2>${esc(mistakeSnippet(item))}</h2></div><div class="mistake-answer-row"><div>你的答案 <strong>${esc(item.chosen||"未作答")}</strong></div><div>正确答案 <strong>${esc(item.answer)}</strong>${item.answerText?` <span>${esc(item.answerText)}</span>`:""}</div></div><div class="mistake-detail-actions"><button data-open-question="${esc(item.examKey)}:${item.no}">回到原题 ↗</button><button data-master="${esc(item.examKey)}:${item.no}">标记已掌握 ✓</button></div></article></div></section>`;
 }
 function mistakes(){
   const folders=mistakeFolders();
   state.mistakeIndex=Math.min(state.mistakeIndex,Math.max(0,folders.length-1));
   const open=folders.find(x=>x.examKey===state.mistakeOpen);
   if(state.mistakeOpen&&!open)state.mistakeOpen=null;
-  const body=open?mistakeDetailHtml(open):folders.length?`<section class="mistakes-scene"><div class="mistakes-heading"><span>REVIEW / ${String(folders.length).padStart(2,"0")}</span><h1>每一道错题，<br>都有迹可循。</h1><p>滚动或左右滑动选择文件夹，点击中央文件夹打开。</p></div><div class="folder-wheel" role="region" aria-label="错题文件夹轮动">${folders.map((group,i)=>mistakeFolderHtml(group,i,folders.length)).join("")}</div><div class="mistake-wheel-footer"><button data-folder-prev="1" aria-label="上一个文件夹">←</button><span>${String(state.mistakeIndex+1).padStart(2,"0")} / ${String(folders.length).padStart(2,"0")}</span><button data-folder-next="1" aria-label="下一个文件夹">→</button></div></section>`:`<section class="mistakes-empty"><div class="empty-folder-icon"><span></span></div><h1>No mistakes yet.</h1><a href="#/practice">Explore exam papers ↗</a></section>`;
+  const scene=folders.length?`<section class="mistakes-scene"><div class="mistakes-heading"><h1>Every <span class="mistake-accent">mis</span>take<br>tells a story.</h1></div><div class="folder-wheel" role="region" aria-label="错题文件夹轮动">${folders.map((group,i)=>mistakeFolderHtml(group,i,folders.length)).join("")}</div><div class="mistake-wheel-footer"><button data-folder-prev="1" aria-label="上一个文件夹">←</button><span>${String(state.mistakeIndex+1).padStart(2,"0")} / ${String(folders.length).padStart(2,"0")}</span><button data-folder-next="1" aria-label="下一个文件夹">→</button></div></section>`:`<section class="mistakes-empty"><div class="empty-folder-icon"><span></span></div><h1>No mistakes yet.</h1><a href="#/practice">Explore exam papers ↗</a></section>`;
+  const body=scene+(open?`<div class="mistake-overlay">${mistakeDetailHtml(open)}</div>`:"");
   app.innerHTML=`<main class="showcase-wrap mistakes-wrap"><div class="showcase-stage mistakes-window"><div class="mistakes-page"><header class="mistakes-topbar"><time class="mistake-clock" aria-label="当前时间">${esc(nowTime())}</time><nav aria-label="页面导航"><a href="#/">Home</a><a href="#/practice">Exam papers</a><a class="selected" href="#/mistakes">Mistakes</a></nav></header>${body}<div class="mistake-data-tools"><button data-export="1">导出学习记录</button><button data-import="1">导入备份</button><input type="file" id="import-file" accept="application/json" hidden></div></div></div></main>`;
   const wheel=app.querySelector(".folder-wheel");
   if(wheel){
@@ -389,11 +395,24 @@ function mistakes(){
     wheel.addEventListener("click",event=>{if(wheel.dataset.dragged){event.preventDefault();event.stopPropagation();delete wheel.dataset.dragged}},true);
   }
 }
+function updateMistakeWheel(){
+  const folders=mistakeFolders();
+  for(const folder of app.querySelectorAll(".mistake-folder")){
+    const index=Number(folder.dataset.folderIndex),group=folders[index];
+    if(!group)continue;
+    const {offset,style}=mistakeFolderPosition(index,folders.length);
+    folder.style.cssText=`${style};--folder-color:${["#ee9da6","#91a9ce","#e8bd82","#9bbba9","#bea8c7","#9cb9c5"][index%6]}`;
+    folder.classList.toggle("is-center",offset===0);
+    folder.setAttribute("aria-label",`${group.title}，${group.items.length} 道错题${offset===0?"，点击打开":"，点击移到中央"}`);
+  }
+  const count=app.querySelector(".mistake-wheel-footer span");
+  if(count)count.textContent=`${String(state.mistakeIndex+1).padStart(2,"0")} / ${String(folders.length).padStart(2,"0")}`;
+}
 function rotateMistakeFolders(step){
   const length=mistakeFolders().length;if(length<2)return;
   playUiSound("folder");
   state.mistakeIndex=(state.mistakeIndex+step+length)%length;
-  mistakes();
+  updateMistakeWheel();
 }
 function submit(examKey){
   const bank=state.bank;if(!bank||key(bank)!==examKey)return;
@@ -456,6 +475,7 @@ function toggleTextWindow(){
 }
 function render(){
   state.route=currentRoute();
+  if(state.route!=="/mistakes")state.mistakeOpen=null;
   if(state.route.startsWith("/exam/"))stopCharge(false);
   if(!state.manifest)return;
   if(app.querySelector(".emoji-arena"))destroyEmojiPhysics();
@@ -479,7 +499,7 @@ app.addEventListener("click",e=>{
   const t=e.target.closest("[data-open],[data-open-listening],[data-route],[data-section],[data-answer],[data-jump],[data-submit],[data-reset],[data-master],[data-export],[data-import],[data-carousel],[data-select-level],[data-expand-level],[data-ui-control],[data-close-text-window],[data-radial-toggle],[data-radial-choice],[data-folder-index],[data-folder-item],[data-folder-prev],[data-folder-next],[data-folder-close],[data-open-question]");
   if(!t)return;
   if(t.dataset.selectLevel){activateLevel(t.dataset.selectLevel);return}
-  if(t.dataset.folderIndex!==undefined){const index=Number(t.dataset.folderIndex);if(index===state.mistakeIndex){playUiSound("click");state.mistakeOpen=mistakeFolders()[index]?.examKey;state.mistakeItem=0}else{playUiSound("folder");state.mistakeIndex=index}mistakes();return}
+  if(t.dataset.folderIndex!==undefined){const index=Number(t.dataset.folderIndex);if(index===state.mistakeIndex){playUiSound("click");state.mistakeOpen=mistakeFolders()[index]?.examKey;state.mistakeItem=0;mistakes()}else{playUiSound("folder");state.mistakeIndex=index;updateMistakeWheel()}return}
   if(t.dataset.folderItem!==undefined){state.mistakeItem=Number(t.dataset.folderItem);mistakes();return}
   if(t.dataset.folderPrev){rotateMistakeFolders(-1);return}
   if(t.dataset.folderNext){rotateMistakeFolders(1);return}
@@ -527,8 +547,9 @@ app.addEventListener("change",async e=>{
   }
 });
 window.addEventListener("hashchange",()=>{render();window.scrollTo(0,0)});
+window.addEventListener("keydown",event=>{if(event.key==="Escape"&&state.route==="/mistakes"&&state.mistakeOpen){state.mistakeOpen=null;mistakes()}});
 setInterval(()=>{const clock=app.querySelector(".mistake-clock");if(clock)clock.textContent=nowTime()},30000);
-fetch("./bank/manifest.json?v=20261105-3").then(r=>{if(!r.ok)throw Error("题库清单不可用");return r.json()}).then(manifest=>{
+fetch("./bank/manifest.json?v=20261106-1").then(r=>{if(!r.ok)throw Error("题库清单不可用");return r.json()}).then(manifest=>{
   state.manifest=manifest;
   render();
 }).catch(err=>showLoadFailure(err.message));

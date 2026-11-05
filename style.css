@@ -598,8 +598,29 @@ html,body,#app{min-height:100%;background:#c5c8ca}
   .selector-number{font-size:34px}
   .paper-tile-detail{font-size:10px}
   .mistake-clock{font-size:18px;max-width:125px;white-space:normal}
-  .mistakes-empty h1{font-size:clamp(38px,10vw,58px)}
+.mistakes-empty h1{font-size:clamp(38px,10vw,58px)}
 }
+
+/* Keep the folder elements mounted so the carousel can actually animate. */
+.mistakes-heading h1{font:800 clamp(42px,5.4vw,78px)/.99 Arial,Helvetica,sans-serif;letter-spacing:-.075em;margin:0}
+.mistakes-heading .mistake-accent{display:inline;color:#ff304f;font:inherit;letter-spacing:inherit}
+.mistake-folder{will-change:transform;transition:transform .62s cubic-bezier(.2,.8,.2,1),opacity .42s ease,filter .3s ease}
+.mistake-folder.is-center .folder-preview-card{opacity:.88}
+.mistake-folder.is-center .folder-preview-card.card-0{transform:translate(-91%,2px) rotate(-10deg)}
+.mistake-folder.is-center .folder-preview-card.card-1{transform:translate(-50%,-8px)}
+.mistake-folder.is-center .folder-preview-card.card-2{transform:translate(-9%,2px) rotate(10deg)}
+.mistake-folder:hover .folder-preview-card,.mistake-folder:focus-visible .folder-preview-card{opacity:1}
+.mistake-folder:hover .folder-preview-card.card-0,.mistake-folder:focus-visible .folder-preview-card.card-0{transform:translate(-93%,-34px) rotate(-12deg)}
+.mistake-folder:hover .folder-preview-card.card-1,.mistake-folder:focus-visible .folder-preview-card.card-1{transform:translate(-50%,-57px)}
+.mistake-folder:hover .folder-preview-card.card-2,.mistake-folder:focus-visible .folder-preview-card.card-2{transform:translate(-7%,-34px) rotate(12deg)}
+.mistake-folder.is-center:hover,.mistake-folder.is-center:focus-visible{filter:saturate(1.08)}
+.mistake-overlay{position:absolute;inset:0;z-index:30;display:grid;place-items:center;padding:clamp(12px,3vw,40px);background:#dce1e2a8;backdrop-filter:blur(15px);-webkit-backdrop-filter:blur(15px);animation:mistake-backdrop-in .25s ease both}
+.mistake-overlay .mistake-open{width:min(100%,1200px);max-height:100%;overflow:auto;margin:0;padding:clamp(20px,3vw,42px);border:1px solid #e6e9e6;border-radius:25px;background:#fff;box-shadow:0 30px 90px #1b2a2230;animation:mistake-dialog-in .34s cubic-bezier(.18,.82,.2,1) both}
+.mistake-overlay .mistake-open-heading{margin:28px 0 24px}
+@keyframes mistake-backdrop-in{from{opacity:0}to{opacity:1}}
+@keyframes mistake-dialog-in{from{opacity:0;transform:translateY(24px) scale(.97)}to{opacity:1;transform:translateY(0) scale(1)}}
+@media(max-width:760px){.mistakes-heading h1{font-size:clamp(40px,10vw,58px)}.mistake-overlay{padding:10px}.mistake-overlay .mistake-open{border-radius:18px;padding:20px}}
+@media(prefers-reduced-motion:reduce){.mistake-folder,.folder-preview-card{transition:none}.mistake-overlay,.mistake-overlay .mistake-open{animation:none}}
 
 /* Personal logo and the quiet, persistent support control. */
 .showcase-logo{display:block;width:46px;height:46px;flex:none;object-fit:cover;border-radius:11px;background:#151313}

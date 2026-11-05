@@ -1,0 +1,754 @@
+{
+  "level": "cet6",
+  "id": "2026_06_2",
+  "title": "2026年6月 第2套",
+  "year": 2026,
+  "month": 6,
+  "set": "2",
+  "hasAudio": true,
+  "readingOnly": false,
+  "counts": {
+    "total": 55,
+    "listening": 25,
+    "cloze": 10,
+    "matching": 10,
+    "reading": 10
+  },
+  "questions": [
+    {
+      "no": 1,
+      "part": "listening",
+      "kind": "mcq",
+      "stem": "What is the man planning to do?",
+      "options": {
+        "A": "Celebrate his 10th wedding anniversary.",
+        "C": "Give his wife a pleasant surprise.",
+        "B": "Celebrate his promotion in Barcelona.",
+        "D": "Ask for leave to visit Barcelona."
+      },
+      "answer": "A"
+    },
+    {
+      "no": 2,
+      "part": "listening",
+      "kind": "mcq",
+      "stem": "Why is the man starting to feel a bit frantic?",
+      "options": {
+        "A": "He is unable to find some inexpensive accommodation.",
+        "B": "There are few warm places to go at this time of the year.",
+        "C": "There is so much for him to do before going on vacation.",
+        "D": "He is afraid Barcelona may not be so fabulous as expected."
+      },
+      "answer": "A"
+    },
+    {
+      "no": 3,
+      "part": "listening",
+      "kind": "mcq",
+      "stem": "What does the woman suggest the man do?",
+      "options": {
+        "A": "Rent a car to drive into the city and scenic spots so as to save the expenses on transportation.",
+        "B": "Spend a couple of nights in a glamorous hotel and the rest of the week in inexpensive places.",
+        "C": "Find all-inclusive accommodation to eliminate the need to pay for food and drinks.",
+        "D": "Stay in a hotel away from the coast where the accommodation is less expensive."
+      },
+      "answer": "B"
+    },
+    {
+      "no": 4,
+      "part": "listening",
+      "kind": "mcq",
+      "stem": "What does the man say about his wife Jane?",
+      "options": {
+        "A": "She is sure to like the cathedral.",
+        "C": "She is no good at logistics.",
+        "B": "She is a romantic at heart.",
+        "D": "She is scared of heights."
+      },
+      "answer": "D"
+    },
+    {
+      "no": 5,
+      "part": "listening",
+      "kind": "mcq",
+      "stem": "What do we learn about the speakers?",
+      "options": {
+        "A": "They often share each other’s experiences.",
+        "C": "They always do things tricky.",
+        "B": "They enjoy interacting with patients.",
+        "D": "They are both pharmacists."
+      },
+      "answer": "D"
+    },
+    {
+      "no": 6,
+      "part": "listening",
+      "kind": "mcq",
+      "stem": "What does the woman say about an interesting case she had?",
+      "options": {
+        "A": "The doctor ended up admitting his mistake.",
+        "C": "The patient actually took her advice.",
+        "B": "The patient consulted another doctor.",
+        "D": "The doctor double-checked with her."
+      },
+      "answer": "C"
+    },
+    {
+      "no": 7,
+      "part": "listening",
+      "kind": "mcq",
+      "stem": "What does the man say he has been working on?",
+      "options": {
+        "A": "A proposal for applying flu shots more effectively.",
+        "C": "A novel strategy to persuade stubborn patients.",
+        "B": "A new medication therapy management program.",
+        "D": "A therapy for patients with similar conditions."
+      },
+      "answer": "B"
+    },
+    {
+      "no": 8,
+      "part": "listening",
+      "kind": "mcq",
+      "stem": "What is a big problem especially for older patients according to the woman?",
+      "options": {
+        "A": "Inability to send text messages.",
+        "C": "Medication non-adherence.",
+        "B": "Distrust in pharmaceutical experts.",
+        "D": "Need for constant reminding."
+      },
+      "answer": "C"
+    },
+    {
+      "no": 9,
+      "part": "listening",
+      "kind": "mcq",
+      "stem": "What are passionate people considered likely to do in America?",
+      "options": {
+        "A": "Accomplish their goals.",
+        "C": "Overstate their importance.",
+        "B": "View things positively.",
+        "D": "Dominate job interviews."
+      },
+      "answer": "A"
+    },
+    {
+      "no": 10,
+      "part": "listening",
+      "kind": "mcq",
+      "stem": "What does a new study from Stanford show about the importance of passion in predicting achievement?",
+      "options": {
+        "A": "It reflects a strong sense of obligation to others.",
+        "C": "It may differ in various cultures.",
+        "B": "It signifies a universal model of motivation.",
+        "D": "It may have been underestimated."
+      },
+      "answer": "C"
+    },
+    {
+      "no": 11,
+      "part": "listening",
+      "kind": "mcq",
+      "stem": "What did the researchers find about the effect of passion on academic achievement for those in more collectivistic societies?",
+      "options": {
+        "A": "It was under-investigated.",
+        "C": "It was taken for granted.",
+        "B": "It was more predictable.",
+        "D": "It was more subtle."
+      },
+      "answer": "D"
+    },
+    {
+      "no": 12,
+      "part": "listening",
+      "kind": "mcq",
+      "stem": "What does the passage say is a pattern in nature?",
+      "options": {
+        "A": "It is any incidental happening in plants and animals or ice crystals.",
+        "B": "It is any basic physical or chemical work in designing substances.",
+        "C": "It is any symmetrical and colorful stripes or spots on organisms.",
+        "D": "It is any regularly repeated arrangement of shapes or colors."
+      },
+      "answer": "D"
+    },
+    {
+      "no": 13,
+      "part": "listening",
+      "kind": "mcq",
+      "stem": "What gives rise to complex patterns at a larger scale?",
+      "options": {
+        "A": "Materials undergoing certain processes.",
+        "B": "Materials exposed to various natural forces.",
+        "C": "Materials impacted by any change of molecules.",
+        "D": "Materials going through extremely radical transformations."
+      },
+      "answer": "A"
+    },
+    {
+      "no": 14,
+      "part": "listening",
+      "kind": "mcq",
+      "stem": "What does the example of frozen crystals on a window show?",
+      "options": {
+        "A": "The beauty of molecular clustering.",
+        "C": "The creation of patterns.",
+        "B": "The way for appreciating patterns.",
+        "D": "The factors affecting clusters."
+      },
+      "answer": "C"
+    },
+    {
+      "no": 15,
+      "part": "listening",
+      "kind": "mcq",
+      "stem": "What might molecular processes produce according to the passage?",
+      "options": {
+        "A": "A pattern by accident.",
+        "C": "Patterns with random imperfections.",
+        "B": "Patterns for specific purposes.",
+        "D": "A pattern with artificial intervention."
+      },
+      "answer": "A"
+    },
+    {
+      "no": 16,
+      "part": "listening",
+      "kind": "mcq",
+      "stem": "What does the speaker say is really difficult?",
+      "options": {
+        "A": "Eliminating all the old habits at once.",
+        "C": "Realizing all the life goals one has set.",
+        "B": "Making a permanent lifestyle change.",
+        "D": "Improving multiple areas of one’s life."
+      },
+      "answer": "B"
+    },
+    {
+      "no": 17,
+      "part": "listening",
+      "kind": "mcq",
+      "stem": "What did researchers find about people with implementation intentions?",
+      "options": {
+        "A": "They were more likely to implement a particular behavior.",
+        "B": "They were more likely to make plans for their future.",
+        "C": "They tended to be committed to a single goal.",
+        "D": "They tended to focus on one thing at a time."
+      },
+      "answer": "A"
+    },
+    {
+      "no": 18,
+      "part": "listening",
+      "kind": "mcq",
+      "stem": "According to the speaker, what is required of you when you begin practicing a new habit?",
+      "options": {
+        "A": "The ability to make the process automatic.",
+        "C": "A lot of conscious effort to remember to do it.",
+        "B": "A practical timetable for implementation.",
+        "D": "Concentration on the benefits it will provide."
+      },
+      "answer": "C"
+    },
+    {
+      "no": 19,
+      "part": "listening",
+      "kind": "mcq",
+      "stem": "What was one of the more bizarre findings about Pluto's atmosphere?",
+      "options": {
+        "A": "It resembles that of Earth in many inconceivable ways.",
+        "B": "It has a haze much thicker than previously believed.",
+        "C": "It is 333.4°F cooler than earlier estimates.",
+        "D": "It is far beyond any quick measurements."
+      },
+      "answer": "B"
+    },
+    {
+      "no": 20,
+      "part": "listening",
+      "kind": "mcq",
+      "stem": "What is said to determine the overall temperature on Earth?",
+      "options": {
+        "A": "The accumulation of solid particles in the air.",
+        "C": "The clouds of particles reflecting sun rays.",
+        "B": "The distribution of gases in its atmosphere.",
+        "D": "The aggravated effects of climate change."
+      },
+      "answer": "B"
+    },
+    {
+      "no": 21,
+      "part": "listening",
+      "kind": "mcq",
+      "stem": "What does the speaker say the researchers have to wait and see?",
+      "options": {
+        "A": "If spectrums of light can be better detected by telescope.",
+        "B": "If Pluto’s hazy atmosphere can be more easily observed.",
+        "C": "If Pluto’s hazy atmosphere scatters strong sunlight.",
+        "D": "If the light from the telescope confirms their idea."
+      },
+      "answer": "D"
+    },
+    {
+      "no": 22,
+      "part": "listening",
+      "kind": "mcq",
+      "stem": "What do we learn from researchers' conclusion at the beginning of the talk?",
+      "options": {
+        "A": "Parents can play a decisive role in cultivating their children’s musical talent.",
+        "B": "Children are embarrassed by parents’ failure to appreciate their music.",
+        "C": "Parents can mould their 8- to 10-year-old children’s music taste.",
+        "D": "Children aged 8 to 10 are old enough to produce poetic lyrics."
+      },
+      "answer": "C"
+    },
+    {
+      "no": 23,
+      "part": "listening",
+      "kind": "mcq",
+      "stem": "What does Dr. Hawk Egermann say about adolescence?",
+      "options": {
+        "A": "They start to show their own musical preference.",
+        "C": "They tend to gravitate away from their homes.",
+        "B": "They tend to be more influenced by their peers.",
+        "D": "They are more open to new genres of music."
+      },
+      "answer": "B"
+    },
+    {
+      "no": 24,
+      "part": "listening",
+      "kind": "mcq",
+      "stem": "What is the key to fostering good taste in later life according to Dr. Hawk Egermann?",
+      "options": {
+        "A": "Enabling children to be receptive to music experts’ suggestions.",
+        "B": "Helping children develop the ability to manage their emotions.",
+        "C": "Familiarising children with different schools of music.",
+        "D": "Introducing children to a variety of musical styles."
+      },
+      "answer": "D"
+    },
+    {
+      "no": 25,
+      "part": "listening",
+      "kind": "mcq",
+      "stem": "How can parents help children create positive memories about artists and bands?",
+      "options": {
+        "A": "By enhancing children’s appreciation of their music.",
+        "B": "By pushing their music hard enough upon children.",
+        "C": "By attending their concerts and live music events with children.",
+        "D": "By introducing their music to children as early as possible. Part Il"
+      },
+      "answer": "C"
+    },
+    {
+      "no": 26,
+      "part": "reading",
+      "kind": "cloze",
+      "stem": "第 26 空",
+      "options": {},
+      "answer": "D",
+      "answerText": "global",
+      "passage": "cloze"
+    },
+    {
+      "no": 27,
+      "part": "reading",
+      "kind": "cloze",
+      "stem": "第 27 空",
+      "options": {},
+      "answer": "O",
+      "answerText": "underlying",
+      "passage": "cloze"
+    },
+    {
+      "no": 28,
+      "part": "reading",
+      "kind": "cloze",
+      "stem": "第 28 空",
+      "options": {},
+      "answer": "A",
+      "answerText": "behavioural",
+      "passage": "cloze"
+    },
+    {
+      "no": 29,
+      "part": "reading",
+      "kind": "cloze",
+      "stem": "第 29 空",
+      "options": {},
+      "answer": "N",
+      "answerText": "traits",
+      "passage": "cloze"
+    },
+    {
+      "no": 30,
+      "part": "reading",
+      "kind": "cloze",
+      "stem": "第 30 空",
+      "options": {},
+      "answer": "E",
+      "answerText": "implications",
+      "passage": "cloze"
+    },
+    {
+      "no": 31,
+      "part": "reading",
+      "kind": "cloze",
+      "stem": "第 31 空",
+      "options": {},
+      "answer": "F",
+      "answerText": "maximise",
+      "passage": "cloze"
+    },
+    {
+      "no": 32,
+      "part": "reading",
+      "kind": "cloze",
+      "stem": "第 32 空",
+      "options": {},
+      "answer": "J",
+      "answerText": "prone",
+      "passage": "cloze"
+    },
+    {
+      "no": 33,
+      "part": "reading",
+      "kind": "cloze",
+      "stem": "第 33 空",
+      "options": {},
+      "answer": "I",
+      "answerText": "presume",
+      "passage": "cloze"
+    },
+    {
+      "no": 34,
+      "part": "reading",
+      "kind": "cloze",
+      "stem": "第 34 空",
+      "options": {},
+      "answer": "B",
+      "answerText": "eliminate",
+      "passage": "cloze"
+    },
+    {
+      "no": 35,
+      "part": "reading",
+      "kind": "cloze",
+      "stem": "第 35 空",
+      "options": {},
+      "answer": "H",
+      "answerText": "personally",
+      "passage": "cloze"
+    },
+    {
+      "no": 36,
+      "part": "reading",
+      "kind": "matching",
+      "stem": "36. Land Life Company’s efforts fit into the global goal to restore millions of hectares of the world’s deforested and degraded land.",
+      "options": {},
+      "answer": "F",
+      "passage": "matching"
+    },
+    {
+      "no": 37,
+      "part": "reading",
+      "kind": "matching",
+      "stem": "37. Planting trees or shrubs together with crops can help improve the yield of the land, while offering small-scale farmers a chance to make a living.",
+      "options": {},
+      "answer": "J",
+      "passage": "matching"
+    },
+    {
+      "no": 38,
+      "part": "reading",
+      "kind": "matching",
+      "stem": "38. One reforestation project bases its argument on economic benefits and investment returns.",
+      "options": {},
+      "answer": "G",
+      "passage": "matching"
+    },
+    {
+      "no": 39,
+      "part": "reading",
+      "kind": "matching",
+      "stem": "39. With time, nature may return to its original state without human intervention if the location is appropriate.",
+      "options": {},
+      "answer": "M",
+      "passage": "matching"
+    },
+    {
+      "no": 40,
+      "part": "reading",
+      "kind": "matching",
+      "stem": "40. According to a forest and climate expert, the revival of forest cover can take place under the necessary conditions.",
+      "options": {},
+      "answer": "D",
+      "passage": "matching"
+    },
+    {
+      "no": 41,
+      "part": "reading",
+      "kind": "matching",
+      "stem": "41. One company runs its major operations exclusively in countries where risks are not high.",
+      "options": {},
+      "answer": "L",
+      "passage": "matching"
+    },
+    {
+      "no": 42,
+      "part": "reading",
+      "kind": "matching",
+      "stem": "42. Left alone, nature may take scores of years or even centuries to repair itself.",
+      "options": {},
+      "answer": "C",
+      "passage": "matching"
+    },
+    {
+      "no": 43,
+      "part": "reading",
+      "kind": "matching",
+      "stem": "43. Economic returns can be derived from selling timber and non-wood products as well as carbon credits.",
+      "options": {},
+      "answer": "H",
+      "passage": "matching"
+    },
+    {
+      "no": 44,
+      "part": "reading",
+      "kind": "matching",
+      "stem": "44. A study is under way across the world to look for crops that can grow among trees.",
+      "options": {},
+      "answer": "K",
+      "passage": "matching"
+    },
+    {
+      "no": 45,
+      "part": "reading",
+      "kind": "matching",
+      "stem": "45. Land Life Company’s operations are usually located where reforestation is impossible without human intervention.",
+      "options": {},
+      "answer": "B",
+      "passage": "matching"
+    },
+    {
+      "no": 46,
+      "part": "reading",
+      "kind": "mcq",
+      "stem": "What plays an important role in determining how much self-discipline people experience?",
+      "options": {
+        "A": "Their belief about the nature of motivation.",
+        "C": "Their conception of self-discipline.",
+        "B": "Their use of internal energy for persisting.",
+        "D": "Their ability to resist temptation."
+      },
+      "answer": "C",
+      "passage": "passage1"
+    },
+    {
+      "no": 47,
+      "part": "reading",
+      "kind": "mcq",
+      "stem": "What did years of research suggest about self-discipline?",
+      "options": {
+        "A": "It is a depletable resource.",
+        "C": "Its strength is dependent on willpower.",
+        "B": "It is bolstered through use.",
+        "D": "Its exercise is an exhausting experience."
+      },
+      "answer": "A",
+      "passage": "passage1"
+    },
+    {
+      "no": 48,
+      "part": "reading",
+      "kind": "mcq",
+      "stem": "Why does the author ask us to reflect on our experience of meeting the goal despite initial difficulty?",
+      "options": {
+        "A": "To show the urgency of abandoning outdated beliefs about self-control.",
+        "B": "To show the feasibility of viewing self-discipline as a force fueling itself.",
+        "C": "To support the argument for persistence in workplace accomplishments.",
+        "D": "To add evidence to consistent findings in previous psychological research."
+      },
+      "answer": "B",
+      "passage": "passage1"
+    },
+    {
+      "no": 49,
+      "part": "reading",
+      "kind": "mcq",
+      "stem": "What are we advised to do if we cannot afford to take breaks to recharge?",
+      "options": {
+        "A": "Figure out what has gone wrong.",
+        "C": "Exert ourselves to go on with the work.",
+        "B": "Focus on the hardest part of our task.",
+        "D": "Gather new energy from people around."
+      },
+      "answer": "C",
+      "passage": "passage1"
+    },
+    {
+      "no": 50,
+      "part": "reading",
+      "kind": "mcq",
+      "stem": "Why does the author compare our self-discipline to a muscle?",
+      "options": {
+        "A": "The more it is applied, the more resistance it encounters.",
+        "B": "The more it is exerted, the more proud we become.",
+        "C": "The more it is enforced, the stronger our willpower proves.",
+        "D": "The more it is exercised, the more strengthened it gets."
+      },
+      "answer": "D",
+      "passage": "passage1"
+    },
+    {
+      "no": 51,
+      "part": "reading",
+      "kind": "mcq",
+      "stem": "What do around half of parents of teens do according to a new study?",
+      "options": {
+        "A": "They set their kids’ phones to filter out obscene information.",
+        "B": "They try to alleviate the spread of explicit scenes on the internet.",
+        "C": "They feel concerned about their kids’ viewing indecent content online.",
+        "D": "They strive to prevent their kids from spending excessive screen time."
+      },
+      "answer": "C",
+      "passage": "passage2"
+    },
+    {
+      "no": 52,
+      "part": "reading",
+      "kind": "mcq",
+      "stem": "What does a large amount of research show about teens’ excessive smartphone use?",
+      "options": {
+        "A": "It allows them less time for meaningful activities.",
+        "C": "It gives them less time for social interactions.",
+        "B": "It renders them more lonely and low-spirited.",
+        "D": "It makes them more alert to online bullying."
+      },
+      "answer": "B",
+      "passage": "passage2"
+    },
+    {
+      "no": 53,
+      "part": "reading",
+      "kind": "mcq",
+      "stem": "What do we learn about the author’s feelings regarding smartphones and screen time?",
+      "options": {
+        "A": "They are deep-seated.",
+        "C": "They are unique.",
+        "B": "They are instinctive.",
+        "D": "They are mixed."
+      },
+      "answer": "D",
+      "passage": "passage2"
+    },
+    {
+      "no": 54,
+      "part": "reading",
+      "kind": "mcq",
+      "stem": "What does actress Kate Winslet think about the world of social media?",
+      "options": {
+        "A": "It poses increasing challenges to parents trying to ensure internet safety.",
+        "B": "It scares parents because they don’t really know what is on the screen.",
+        "C": "It is a sphere difficult for parents and their teens to navigate.",
+        "D": "It is full of uncertainties frightful to parents and their teens."
+      },
+      "answer": "B",
+      "passage": "passage2"
+    },
+    {
+      "no": 55,
+      "part": "reading",
+      "kind": "mcq",
+      "stem": "What message does the author try to convey in the last paragraph?",
+      "options": {
+        "A": "Parents have to be concerned about dangers to their teens in both real and virtual worlds.",
+        "B": "Governments have responsibilities in regulating social media and teens’ smartphone use.",
+        "C": "Parents should provide guidance to their teens in the use of social media.",
+        "D": "Online dangers are as serious as problems with teenagers’ mental health."
+      },
+      "answer": "A",
+      "passage": "passage2"
+    }
+  ],
+  "passages": {
+    "cloze": {
+      "kind": "cloze",
+      "text": "Most financial crises have plenty in common: they tend to start in the banking sector and involve excessive borrowing, together with an asset bubble. The ___26___ crisis of 2008 was no different, with the asset bubble focused on US real estate. But my research suggests this crisis had another ___27___ cause—that some people in the banking sector were playing or “gaming” the system for their own financial gain. The game being played had several important features. The first was the deliberate complexity of the financial products at its core. Then there are the ___28___ biases that permeate decision-making at all levels of the banking industry. Banking often attracts people with certain personality ___29___, including those who are overconfident and take excessive risks. Such people tend to like complexity for its own sake, but they often do not fully understand the ___30___ of that complexity for the stability of the financial system as a whole. Often they do not care—they are primarily interested in gaming the system to ___31___ their bonuses. The next element is risk. There are parts of the banking sector that will always be ___32___ to risk, but many bankers have come to feel immune to its potential impact, because they ___33___ that, however recklessly banks behave, governments will always be there to bail them out. Gaming in the banking sector seems virtually impossible to ___34___. The only effective measure to end it would be to make bankers ___35___ liable for losses, but no government has ever passed such a law, and no single government could do so on its own, since this would immediately cause their entire national banking sector to move wholesale to another jurisdiction.",
+      "wordBank": {
+        "A": "behavioural",
+        "B": "eliminate",
+        "C": "fragile",
+        "D": "global",
+        "E": "implications",
+        "F": "maximise",
+        "G": "overlapping",
+        "H": "personally",
+        "I": "presume",
+        "J": "prone",
+        "K": "prototypes",
+        "L": "reassure",
+        "M": "skeptically",
+        "N": "traits",
+        "O": "underlying"
+      },
+      "blanks": [
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35
+      ]
+    },
+    "matching": {
+      "kind": "matching",
+      "title": "How do you bring a forest back to life?",
+      "paragraphs": {
+        "A": "Five hundred years ago, forests covered much of the Iberian peninsula. But that soon changed. Centuries of wars and invasions, agricultural expansion and woodcutting for firewood and shipping wiped out most of the woods and transformed places like Matamorisca, a small village in northern Spain, into degraded landscapes.",
+        "B": "The region’s dry climate and depleted soils would be a recipe for disaster in your average program to replant trees, but for the Amsterdam-based Land Life Company it’s an ideal place. “We typically operate where nature does not come back by itself,” says Jurrian Ruys, its CEO. “We go where there are rougher conditions in terms of weather, with rough or very hot summers.” In Matamorisca, they intervened in 17 barren hectares owned by the regional government and peppered them with their signature device: a biodegradable cardboard container they call the cocoon which can hold 25 litres of water underground to aid a seedling’s first year. Around 16,000 trees, including oaks, ashes, walnuts, rowans, and whitebeams, were planted in May 2018, and the company reports that 96% of them survived that year’s burning hot summer without extra irrigation, a critical milestone for a young tree.",
+        "C": "“Does nature return by itself?” asks Arnout Asjes, Land Life Company’s chief technology officer, who oversees a mix of drone (AHL) and satellite imagery, big data analysis, soil enhancement, QR tagging and site-specific tree configuration designs. “Probably, but it can take decades or hundreds of years, so we are speeding things up.”",
+        "D": "His company belongs to a global movement of organisations trying to save degraded or deforested areas, ranging from fertile tropical lowlands to dry hills in temperate regions. Spurred by global biodiversity loss and climate change, these groups are pushing the boundary of how to revive forest cover. “It’s not a theoretical proposition,” says Walter Vergara, a forest and climate specialist at the World Resources Institute (WRI). “It requires the right incentives, the right stakeholders, the right analysis and sufficient capital, but it can happen.”",
+        "E": "How these factors come together for a particular project—and whether saving destroyed woods is even possible—depends on what kind of ecosystem you have in mind. Secondary forests in the Amazon are different from Texas pines recovering after wildfires or the Arctic timber woods that cover much of Sweden. Each provides different reasons for reforestation programs and each has particular needs. In the dry conditions around Matamorisca and similar areas in Spain, Land Life Company worries about rapid desertification (i i844). As its focus is on restoring an ecosystem, it works with organisations that don’t expect their money back.",
+        "F": "With around 600 hectares replanted around the world since 2015 and another 1,100 planned for this year, the company’s drive fits into the Bonn Challenge, a global effort to restore 150 million hectares of the world’s deforested and degraded land by 2020. That’s an area roughly the size of Iran or Mongolia. By 2030, the goal is to reach 350 million hectares—20% more land than India. These targets include both the rehabilitation of forested areas that have lost density or look a bit weak (a process known as ‘restoration’ in forestry jargon) and the recovery of forest cover in areas where it was completely cleared (what’s known as ‘reforestation’).",
+        "G": "That global target is broken into smaller pieces and takes shape in Latin America as the 20x20 Initiative, an effort to contribute 20 million hectares to the overall goal by initiating small to medium projects with the political backing of governments. Unlike Land Life Company, this region-wide project makes the economic and business case for reforestation, even though they are after biodiversity conservation. “You need to bring in private sector money,” says WRI’s Vergara, who leads the initiative, “and that capital needs to see a return on their investment.” A study he led predicts Latin America would see an estimated net present value of about $23bn over a 50-year period if it reaches its goal.",
+        "H": "Money can come from timber sales in sustainably managed forests or from harvesting ‘non-wood products’ like nuts, oils and fruits from the trees. You can take note of how much carbon dioxide your forest is capturing and sell carbon credits to companies keen to offset their emissions. Or you can even grow the forest hoping that biodiversity will attract ecotourists who'd pay for lodging, birdwatching tours and meals.",
+        "I": "Still, these backers are not your high-street bank. Money for the 20x20 Initiative comes mostly from financial organisations with triple goal—a modest return on their investment, environmental benefits and social gains—known as impact investors. Take the German fund 12Tree for instance, one of the 20x20 partners. It put $9.5 million into Cuango, a 1,455-hectare property on the Caribbean coast of Panama that combines a commercial cocoa tree plantation with timber extraction from a sustainably managed secondary forest. With their money, they reforested a former cattle ranch, provided high-quality jobs for the surrounding communities and made a return on their investment.",
+        "J": "Even on land cleared decades ago and currently used by farmers, some crops can coexist with the forest, if you find the right balance. Although not technically reforestation, agroforestry (a system of land use in which harvestable trees or shrubs are grown among or around crops or on pasture land, as a means of preserving or enhancing the productivity of the land) provides an opportunity for small-holder farmers to sustain their livelihoods while adding some forest cover to their farms.",
+        "K": "A global project called Breedcafs is studying how trees behave in coffee farms, hoping to find crop varieties that manage to grow under the shade of trees. Coffee grows naturally in such forests, so copying that in farms is taking the crop back to its roots. “By reintroducing trees in the landscape, we impact positively humidity, rain capture, soil conservation and biodiversity preservation,” says coffee expert Benoit Bertrand, who leads the project from the French Agricultural Research Centre for International Development. Bertrand is analysing which of dozens of coffee varieties fits better for this system. A similar approach can be applied to land with cocoa, vanilla and fruit trees.",
+        "L": "Not every piece of land is fit for reforestation. Vergara’s partners look for safe investments, and even Land Life Company only runs major projects in what they consider “low-risk” countries. “We tend to avoid large-scale operations in countries in some parts of the Middle East or Africa where the permanence is not secured,” says Ruys.",
+        "M": "But in the right location, perhaps all you need is time. In the Central Pacific of Costa Rica, the 330-hectare National Wildlife Refuge Baru looks nothing like the cattle ranch it was before 1987, when Jack Ewing decided to turn this large estate into an ecotourism destination. Instead of intervening, a friend told him to let nature have its way. Baru’s former grazing lands are now thriving woods and the property boasts over 150 hectares of secondary forests with no intervention from humans. In the past 10 years, animals such as howling monkeys, scarlet macaws and even migratory cougars have returned to the refuge’s land, boosting tourism and revitalising the ecosystem. Ewing, now 75, explains this success using the words his friend chose three decades ago: “In Costa Rica, when you stop managing the shrubs, the jungle comes back for its revenge.”"
+      },
+      "letters": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H",
+        "I",
+        "J",
+        "K",
+        "L",
+        "M"
+      ]
+    },
+    "passage1": {
+      "kind": "passage",
+      "text": "What does self-discipline look like at work? Sometimes, it’s the ability to resist temptation, such as distractions to avoid a particular task. Other times it’s the ability to persist with a task when your energy and motivation seem low. What do you believe about the nature of your own self-discipline? Is it something that runs on internal energy that is spent with use? Or is it something that is bolstered as you apply it and persist? Your answer matters, as it determines how much self-discipline you experience. For years, research in psychology pointed to self-control as a resource that is depleted with use and needs to be restored through breaks, rest, or sleep. More recently, however, research points to the importance of mindset. If you view self-discipline as an expendable resource, your willpower tends to fade with use. If you believe that exercising your self-control strengthens and fuels it, that is more likely to be your experience as you resist temptation or push yourself to get something done that is not appealing. If you don’t already view self-discipline as a force that feeds itself, what might you do? Reflect on times that you had initial difficulty resisting temptation, getting started on something, or sticking with it, but pushed ahead and accomplished the task or met the goal. That’s the kind of experience we’re talking about with this particular belief about self-discipline, and you’ve already had such an experience, so you’ve shown that it’s possible. When you feel your willpower and motivation fading, remind yourself of those previous experiences and imagine the same happening now. What if your experiences have always seemed to indicate that your self-control diminishes with use, and you need breaks to recharge? There’s nothing wrong with that as long as you can afford to take those breaks. If not, remind yourself that not everyone experiences self-discipline as a depletable resource and that your experience might be different if you focus on gathering more energy at this point rather than focusing on how difficult it is to continue or the need for a break. Also, if you know someone who is a role model of self-discipline, picture that person in your situation, persisting in the task. Regardless of how you do it, as you push forward to continue to accomplish progress, be sure to mentally reinforce yourself by taking pride in your ability to exert more willpower as you persist. The benefits of exerting willpower are cumulative. Your self-discipline is akin to a muscle, and each time you resist temptation or persist in a task despite a lack of motivation, you strengthen that muscle, leading to less effort and resistance in similar instances in the future."
+    },
+    "passage2": {
+      "kind": "passage",
+      "text": "Smartphones have always posed challenges for parents of teens. From social media apps to excessive screen time, the digital world is as threatening as the physical. A new study shows that about half of parents of teens are worried about their teens being exposed to explicit content online. This is a valid concern, of course. But there are ways to alleviate the spread of explicit content, from changing the settings in their kids’ phone to monitoring such content with apps like Bark. Just as alarming, if not more so, is that the amount of time teens spend on social media can lead to anxiety and depression. Excessive screen time has detrimental effects, for a lot of obvious reasons. Constant media consumption inhibits healthy activities associated with childhood, like spending time outside, exercising, talking to friends and family. If it interferes with sleep, that’s even worse. Ample research shows too much smartphone use produces significant anxiety, depression, and feelings of isolation in teens. Teens log on to social media or spend time online trying to make connections, but end up feeling more alone and sad than ever. Faceless communication not only produces feelings of isolation and loneliness but increases instances of online bullying and susceptibility to criminal conducts. Though I’ve banned most social media, I’ve still battled smartphone time with my own kids. A lot of the time I wish I could throw my kids’ smartphones into the nearest lake. The convenience of communication— when they need a ride home from school after practice, for instance—often feels like it isn’t worth the battle to keep their screen time low and productive, and continue to encourage “real-life” activities outside and with friends and family. I understand the addiction and often tell them I’m not sure how I would have handled having a smartphone as a teen. As an adult, I too, struggle with overuse. In a recent TV interview to promote a new film about a mother and daughter navigating social media use, actress Kate Winslet expressed her view on teens and social media—and her concern mirrors the trends. “I do definitely feel that the world of social media is frightening to parents because we don’t really know what’s there,” she said. “We don’t know how our children are using it. We don’t know the effects that it’s really having on them.” I don’t think the U.S. government should regulate social media and teen smartphone use, but it is a vital topic for parents to understand and take seriously. Unfortunately, now, parents don’t just have to worry about real-world dangers, but all the ones sneaking online and the effects they have on teenagers and their mental health."
+    }
+  },
+  "warnings": [],
+  "audioFile": "listening.mp3",
+  "audioUrl": "https://cet46-preparation-jqk-2026.just-elf-6358.chatgpt.site/assets/audio/cet6/2026_06_2/listening.mp3"
+}

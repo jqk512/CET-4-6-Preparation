@@ -1,0 +1,752 @@
+{
+  "level": "cet4",
+  "id": "2026_06_1",
+  "title": "2026年6月 第1套",
+  "year": 2026,
+  "month": 6,
+  "set": "1",
+  "hasAudio": true,
+  "readingOnly": false,
+  "counts": {
+    "total": 55,
+    "listening": 25,
+    "cloze": 10,
+    "matching": 10,
+    "reading": 10
+  },
+  "questions": [
+    {
+      "no": 1,
+      "part": "listening",
+      "kind": "mcq",
+      "stem": "Why was Keith Stonehouse left with a $1,000 bill?",
+      "options": {
+        "A": "He had bought meals with his online food ordering account.",
+        "B": "His son had used his cell phone to pay for playing a game.",
+        "C": "His son had ordered food from several restaurants.",
+        "D": "He had dined out at a famous five-star restaurant."
+      },
+      "answer": "C"
+    },
+    {
+      "no": 2,
+      "part": "listening",
+      "kind": "mcq",
+      "stem": "What does the news report say Keith Stonehouse is planning to do?",
+      "options": {
+        "A": "Teach his son a lesson.",
+        "C": "Ask his neighbors for help.",
+        "B": "Change his password.",
+        "D": "Buy a bigger refrigerator."
+      },
+      "answer": "B"
+    },
+    {
+      "no": 3,
+      "part": "listening",
+      "kind": "mcq",
+      "stem": "What did animal behaviour experts do according to the news report?",
+      "options": {
+        "A": "They examined how visitors affected animal behaviour in zoos.",
+        "B": "They studied when the best time to feed animals in public was.",
+        "C": "They studied how animals adapted themselves to life in zoos.",
+        "D": "They examined what behaviours indicated animal boredom."
+      },
+      "answer": "A"
+    },
+    {
+      "no": 4,
+      "part": "listening",
+      "kind": "mcq",
+      "stem": "Why have some animal species likely become used to the presence of humans?",
+      "options": {
+        "A": "They socialise with zookeepers as well as with each other.",
+        "B": "They show good adaptability to living with humans.",
+        "C": "They have been kept as pets by humans.",
+        "D": "They have been born and raised in zoos."
+      },
+      "answer": "D"
+    },
+    {
+      "no": 5,
+      "part": "listening",
+      "kind": "mcq",
+      "stem": "What is Denver doing with its popular electric bike incentive program?",
+      "options": {
+        "A": "Adjusting it.",
+        "C": "Reevaluating it.",
+        "B": "Suspending it.",
+        "D": "Expanding it."
+      },
+      "answer": "B"
+    },
+    {
+      "no": 6,
+      "part": "listening",
+      "kind": "mcq",
+      "stem": "How did the electric bike incentive program benefit residents?",
+      "options": {
+        "A": "They could buy an electric bike for $400 in April.",
+        "B": "They could buy their first electric bike at a discount.",
+        "C": "They could enjoy free after-sale service for their purchase.",
+        "D": "They could get $1,200 from government funds if they qualified."
+      },
+      "answer": "D"
+    },
+    {
+      "no": 7,
+      "part": "listening",
+      "kind": "mcq",
+      "stem": "What does the city of Denver expect to do early next year?",
+      "options": {
+        "A": "Put 400 more electric bikes on its streets.",
+        "C": "Resume its electric bike incentive program.",
+        "B": "Increase the program funding by 8 percent.",
+        "D": "Invest millions of dollars into the local economy."
+      },
+      "answer": "C"
+    },
+    {
+      "no": 8,
+      "part": "listening",
+      "kind": "mcq",
+      "stem": "What exhibits does the man like best in the museum he visited?",
+      "options": {
+        "A": "The coin collection.",
+        "C": "The ancient ornaments.",
+        "B": "The primitive tools.",
+        "D": "The 2,000-year-old clothes."
+      },
+      "answer": "A"
+    },
+    {
+      "no": 9,
+      "part": "listening",
+      "kind": "mcq",
+      "stem": "What does the woman say about the old city centre?",
+      "options": {
+        "A": "It is charming with narrow but beautiful streets.",
+        "B": "It attracts visitors from every corner of the world.",
+        "C": "It has flowers displayed around the Trevi Fountain.",
+        "D": "It is more attractive than the pictures in guidebooks."
+      },
+      "answer": "A"
+    },
+    {
+      "no": 10,
+      "part": "listening",
+      "kind": "mcq",
+      "stem": "What does the man say about the square with the Spanish steps?",
+      "options": {
+        "A": "It is covered with wild grass.",
+        "C": "It is located away from an old church.",
+        "B": "It is very famous and pretty.",
+        "D": "It is surrounded by Spanish-style houses."
+      },
+      "answer": "B"
+    },
+    {
+      "no": 11,
+      "part": "listening",
+      "kind": "mcq",
+      "stem": "What does the woman say she is going to do first?",
+      "options": {
+        "A": "Ask Kathy what her plan is.",
+        "C": "Ask Kathy if she’d like to see the square.",
+        "B": "Tell Kathy Mike will join them.",
+        "D": "Tell Kathy Mike would like to have a change."
+      },
+      "answer": "C"
+    },
+    {
+      "no": 12,
+      "part": "listening",
+      "kind": "mcq",
+      "stem": "What advice does the man want to get from the woman?",
+      "options": {
+        "A": "How to fit into the bigger picture.",
+        "C": "How to create a solid first impression.",
+        "B": "How to get on with colleagues.",
+        "D": "How to succeed in a new job."
+      },
+      "answer": "D"
+    },
+    {
+      "no": 13,
+      "part": "listening",
+      "kind": "mcq",
+      "stem": "What does the woman say is the most important thing for the man to do at first?",
+      "options": {
+        "A": "Get familiar with all the details of his job description.",
+        "C": "Recognize his own limitations and weaknesses.",
+        "B": "Learn about the relations within the organization. |",
+        "D": "Understand his role from various perspectives."
+      },
+      "answer": "D"
+    },
+    {
+      "no": 14,
+      "part": "listening",
+      "kind": "mcq",
+      "stem": "What does the man say he is feeling a bit uneasy about?",
+      "options": {
+        "A": "Learning history.",
+        "C": "Creating reports for other departments to use.",
+        "B": "Meeting his boss.",
+        "D": "Leaving his coworkers in the present company."
+      },
+      "answer": "B"
+    },
+    {
+      "no": 15,
+      "part": "listening",
+      "kind": "mcq",
+      "stem": "What does the woman suggest the man do to gain insight about the running of the business?",
+      "options": {
+        "A": "Get to know the decision-makers.:",
+        "C": "Promote its products and services.",
+        "B": "Acquire decision-making authority.",
+        "D": "Observe its overall management."
+      },
+      "answer": "A"
+    },
+    {
+      "no": 16,
+      "part": "listening",
+      "kind": "mcq",
+      "stem": "What does research indicate about many consumers when they evaluate a purchase?",
+      "options": {
+        "A": "They do not tell marketers their feeling about a product.",
+        "B": "They do not compare competing brands and prices.",
+        "C": "They are not hesitant to contradict themselves.",
+        "D": "They are not sure what they really like to buy."
+      },
+      "answer": "B"
+    },
+    {
+      "no": 17,
+      "part": "listening",
+      "kind": "mcq",
+      "stem": "What do good marketers keep in mind all the time?",
+      "options": {
+        "A": "Consumers are often attracted by new products.",
+        "C": "Consumers find it hard to resist temptation.",
+        "B": "Consumers tend to make decisions on the spot.",
+        "D": "Consumers are actually driven by emotion."
+      },
+      "answer": "D"
+    },
+    {
+      "no": 18,
+      "part": "listening",
+      "kind": "mcq",
+      "stem": "What should marketers do besides stressing the features of a product?",
+      "options": {
+        "A": "Draw consumers’ attention to the luxury goods symbolizing quality life.",
+        "B": "Leave consumers the impression they are doing nothing manipulative.",
+        "C": "Highlight the emotional response it will trigger in the consumer.",
+        "D": "Remind consumers of the wide connections it can help to build."
+      },
+      "answer": "C"
+    },
+    {
+      "no": 19,
+      "part": "listening",
+      "kind": "mcq",
+      "stem": "What does the passage say about Americans?",
+      "options": {
+        "A": "They are taking in a lot of plastic.",
+        "C": "They consume much processed food.",
+        "B": "They are polluting the environment.",
+        "D": "They make everything with plastics."
+      },
+      "answer": "A"
+    },
+    {
+      "no": 20,
+      "part": "listening",
+      "kind": "mcq",
+      "stem": "What counted as the biggest sources for Americans breathing in or consuming microplastics?",
+      "options": {
+        "A": "Beer, salts and added sugars.",
+        "C": "Food packages and plastic bags.",
+        "B": "Tap water and take-away food.",
+        "D": "Air, bottled water and seafood."
+      },
+      "answer": "D"
+    },
+    {
+      "no": 21,
+      "part": "listening",
+      "kind": "mcq",
+      "stem": "What does the passage say is still unknown?",
+      "options": {
+        "A": "How much plastic there is in the remaining 85% of Americans’ typical diet.",
+        "B": "What measures can be taken to prevent plastic objects from fragmenting.",
+        "C": "What harm microplastics may actually do to the average Americans.",
+        "D": "How many ways there are for microplastics to get into food and air."
+      },
+      "answer": "A"
+    },
+    {
+      "no": 22,
+      "part": "listening",
+      "kind": "mcq",
+      "stem": "What did over half of the respondents say in the survey?",
+      "options": {
+        "A": "They planned to adopt a pet animal.",
+        "C": "They had at least one pet.",
+        "B": "They kept not only a dog but a cat.",
+        "D": "They liked cats more than dogs."
+      },
+      "answer": "C"
+    },
+    {
+      "no": 23,
+      "part": "listening",
+      "kind": "mcq",
+      "stem": "What did most older pet owners in the survey say their pets provided?",
+      "options": {
+        "A": "A sense of pride.",
+        "C": "A sense of purpose.",
+        "B": "A sense of duty.",
+        "D": "A sense of security."
+      },
+      "answer": "C"
+    },
+    {
+      "no": 24,
+      "part": "listening",
+      "kind": "mcq",
+      "stem": "What does the passage say people did report in the survey?",
+      "options": {
+        "A": "A few problems with keeping big animals.",
+        "C": "A few cases of getting attacked by pet animals.",
+        "B": "Some disadvantages related to pet ownership.",
+        "D": "Some conflicts with neighbors due to pet keeping."
+      },
+      "answer": "B"
+    },
+    {
+      "no": 25,
+      "part": "listening",
+      "kind": "mcq",
+      "stem": "What does research show interacting with pets can do?",
+      "options": {
+        "A": "Reduce as many symptoms of depression as medical help.",
+        "B": "Improve people’s health as much as physical activities.",
+        "C": "Lower older people’s stress as effectively as exercising.",
+        "D": "Bring many of the same benefits as human social support."
+      },
+      "answer": "D"
+    },
+    {
+      "no": 26,
+      "part": "reading",
+      "kind": "cloze",
+      "stem": "第 26 空",
+      "options": {},
+      "answer": "N",
+      "answerText": "squeezed",
+      "passage": "cloze"
+    },
+    {
+      "no": 27,
+      "part": "reading",
+      "kind": "cloze",
+      "stem": "第 27 空",
+      "options": {},
+      "answer": "A",
+      "answerText": "available",
+      "passage": "cloze"
+    },
+    {
+      "no": 28,
+      "part": "reading",
+      "kind": "cloze",
+      "stem": "第 28 空",
+      "options": {},
+      "answer": "I",
+      "answerText": "increased",
+      "passage": "cloze"
+    },
+    {
+      "no": 29,
+      "part": "reading",
+      "kind": "cloze",
+      "stem": "第 29 空",
+      "options": {},
+      "answer": "K",
+      "answerText": "occurred",
+      "passage": "cloze"
+    },
+    {
+      "no": 30,
+      "part": "reading",
+      "kind": "cloze",
+      "stem": "第 30 空",
+      "options": {},
+      "answer": "F",
+      "answerText": "exactly",
+      "passage": "cloze"
+    },
+    {
+      "no": 31,
+      "part": "reading",
+      "kind": "cloze",
+      "stem": "第 31 空",
+      "options": {},
+      "answer": "O",
+      "answerText": "typically",
+      "passage": "cloze"
+    },
+    {
+      "no": 32,
+      "part": "reading",
+      "kind": "cloze",
+      "stem": "第 32 空",
+      "options": {},
+      "answer": "C",
+      "answerText": "earned",
+      "passage": "cloze"
+    },
+    {
+      "no": 33,
+      "part": "reading",
+      "kind": "cloze",
+      "stem": "第 33 空",
+      "options": {},
+      "answer": "G",
+      "answerText": "exhausting",
+      "passage": "cloze"
+    },
+    {
+      "no": 34,
+      "part": "reading",
+      "kind": "cloze",
+      "stem": "第 34 空",
+      "options": {},
+      "answer": "J",
+      "answerText": "interpret",
+      "passage": "cloze"
+    },
+    {
+      "no": 35,
+      "part": "reading",
+      "kind": "cloze",
+      "stem": "第 35 空",
+      "options": {},
+      "answer": "D",
+      "answerText": "effect",
+      "passage": "cloze"
+    },
+    {
+      "no": 36,
+      "part": "reading",
+      "kind": "matching",
+      "stem": "36. The author’s daughter slept throughout the last leg of their flight to Great Barrier Island.",
+      "options": {},
+      "answer": "C",
+      "passage": "matching"
+    },
+    {
+      "no": 37,
+      "part": "reading",
+      "kind": "matching",
+      "stem": "37. The lodge where the author stayed provided very delicious food.",
+      "options": {},
+      "answer": "I",
+      "passage": "matching"
+    },
+    {
+      "no": 38,
+      "part": "reading",
+      "kind": "matching",
+      "stem": "38. Many people are attracted to Great Barrier Island because of the incredible fishing sites around it.",
+      "options": {},
+      "answer": "E",
+      "passage": "matching"
+    },
+    {
+      "no": 39,
+      "part": "reading",
+      "kind": "matching",
+      "stem": "39. A well-known artist failed to purchase a house on Great Barrier Island.",
+      "options": {},
+      "answer": "L",
+      "passage": "matching"
+    },
+    {
+      "no": 40,
+      "part": "reading",
+      "kind": "matching",
+      "stem": "40. Unable to fall asleep after a long flight, the author was pleased to enjoy the most gorgeous view of the night sky in his life.",
+      "options": {},
+      "answer": "A",
+      "passage": "matching"
+    },
+    {
+      "no": 41,
+      "part": "reading",
+      "kind": "matching",
+      "stem": "41. Great Barrier Island is compared to another island which attracted a lot of artists and people who wished to stay away from city life half a century ago.",
+      "options": {},
+      "answer": "F",
+      "passage": "matching"
+    },
+    {
+      "no": 42,
+      "part": "reading",
+      "kind": "matching",
+      "stem": "42. One most memorable part of the author’s visit to Great Barrier Island was a one-hour walk to its centre’s hot springs.",
+      "options": {},
+      "answer": "J",
+      "passage": "matching"
+    },
+    {
+      "no": 43,
+      "part": "reading",
+      "kind": "matching",
+      "stem": "43. Great Barrier Island has officially been recognized for its extraordinary starry nights.",
+      "options": {},
+      "answer": "B",
+      "passage": "matching"
+    },
+    {
+      "no": 44,
+      "part": "reading",
+      "kind": "matching",
+      "stem": "44. Great Barrier Island is not connected to any public power supply lines.",
+      "options": {},
+      "answer": "D",
+      "passage": "matching"
+    },
+    {
+      "no": 45,
+      "part": "reading",
+      "kind": "matching",
+      "stem": "45. It is strange that light pollution on Great Barrier Island mainly comes from a faraway island to the north.",
+      "options": {},
+      "answer": "G",
+      "passage": "matching"
+    },
+    {
+      "no": 46,
+      "part": "reading",
+      "kind": "mcq",
+      "stem": "What is the classic grocery store dilemma?",
+      "options": {
+        "A": "Whether or not one should eat organic food.",
+        "B": "Whether or not one can stretch their wallet far.",
+        "C": "Organic food costs more but it certainly tastes better.",
+        "D": "One wants the best food but their budget is limited."
+      },
+      "answer": "D",
+      "passage": "passage1"
+    },
+    {
+      "no": 47,
+      "part": "reading",
+      "kind": "mcq",
+      "stem": "What do we learn about organic food from science?",
+      "options": {
+        "A": "Whether it is any better remains uncertain.",
+        "B": "Whether it is healthier is under consideration.",
+        "C": "Whether it is more nutritious than conventional food is arguable.",
+        "D": "Whether it is going to replace conventional food is still unclear."
+      },
+      "answer": "A",
+      "passage": "passage1"
+    },
+    {
+      "no": 48,
+      "part": "reading",
+      "kind": "mcq",
+      "stem": "What does the passage say about organic and non-organic products as far as food safety is concerned?",
+      "options": {
+        "A": "Their difference is the conventions used to test them.",
+        "B": "They differ in how much pesticide remains on them.",
+        "C": "One relies on pesticides whereas the other does not.",
+        "D": "There is no substantial difference between the two."
+      },
+      "answer": "D",
+      "passage": "passage1"
+    },
+    {
+      "no": 49,
+      "part": "reading",
+      "kind": "mcq",
+      "stem": "What does the author say about organic farming?",
+      "options": {
+        "A": "It may be blamed for the shrinking bee populations in the world.",
+        "B": "It minimizes the use of controversial pesticides in its operations.",
+        "C": "It may impact the environment less than conventional farming.",
+        "D": "It contaminates groundwater as much as conventional farming."
+      },
+      "answer": "C",
+      "passage": "passage1"
+    },
+    {
+      "no": 50,
+      "part": "reading",
+      "kind": "mcq",
+      "stem": "What do advocates of organic farming argue about its yields and efficiency?",
+      "options": {
+        "A": "They would increase quickly with the emergence of new technologies.",
+        "B": "They would improve remarkably with more research and investment.",
+        "C": "They would be achieved along with enormous health benefits.",
+        "D": "They would considerably lower the cost to the environment."
+      },
+      "answer": "B",
+      "passage": "passage1"
+    },
+    {
+      "no": 51,
+      "part": "reading",
+      "kind": "mcq",
+      "stem": "What is the finding of one recent study about being selfish?",
+      "options": {
+        "A": "It may bring certain benefits in the short term.",
+        "B": "It usually yields more disadvantages than advantages.",
+        "C": "It serves individual interest rather than a collective’s.",
+        "D": "It may give way to cooperating in the long run."
+      },
+      "answer": "A",
+      "passage": "passage2"
+    },
+    {
+      "no": 52,
+      "part": "reading",
+      "kind": "mcq",
+      "stem": "What have researchers found by studying identical and non-identical twins?",
+      "options": {
+        "A": "They are overwhelmingly different in the amounts of genes.",
+        "B": "One’s behavior is largely determined by their genetic traits.",
+        "C": "One’s biological roots can be identified by their genes.",
+        "D": "They differ from each other in their behavior patterns."
+      },
+      "answer": "B",
+      "passage": "passage2"
+    },
+    {
+      "no": 53,
+      "part": "reading",
+      "kind": "mcq",
+      "stem": "What did the author and colleagues identify in their recent research?",
+      "options": {
+        "A": "A gene-related selfish behavior in preschool children.",
+        "B": "Key factors that determine one’s altruistic behavior.",
+        "C": "A specific gene associated with altruistic behavior.",
+        "D": "Roles played by genes in shaping one’s character."
+      },
+      "answer": "C",
+      "passage": "passage2"
+    },
+    {
+      "no": 54,
+      "part": "reading",
+      "kind": "mcq",
+      "stem": "What do we learn from evolutionary scientists about cooperative behavior?",
+      "options": {
+        "A": "It may have initially originated in individuals linked by blood.",
+        "B": "It may have caused the diversification of communities.",
+        "C": "It helps to build relationships among blood-related people.",
+        "D": "It guarantees the achievement of goals otherwise unattainable."
+      },
+      "answer": "A",
+      "passage": "passage2"
+    },
+    {
+      "no": 55,
+      "part": "reading",
+      "kind": "mcq",
+      "stem": "What can we infer from the last paragraph?",
+      "options": {
+        "A": "Cooperative behavior is evident among identical twins.",
+        "B": "One is born either cooperative or non-cooperative.",
+        "C": "Genes determine one’s tendency to cooperate.",
+        "D": "Cooperative behavior may be cultivated."
+      },
+      "answer": "D",
+      "passage": "passage2"
+    }
+  ],
+  "passages": {
+    "cloze": {
+      "kind": "cloze",
+      "text": "One of the biggest controversies over the Industrial Revolution is how it affected the working class. The oldest debates were over whether the standards of living rose or fell. Those that believed they fell claimed that the capitalists ___26___ every ounce of surplus they could from the working class. Those that believed the standards of living rose claimed that the environment was consumer-friendly, with more and more goods ___27___ to the working class every year. Today’s historians agree that overall, the standards of living ___28___. They do not agree, however, on when this improvement ___29___. In an effort to solve this controversy, historians have attempted to define ___30___ what “standard of living” means. They all seem to agree that it should mean happiness, but happiness is impossible to measure. Instead, historians ___31___ use “real income” as the measure for the standards of living. Real income is money ___32___ and then adjusted according to the cost of living. However, it does not take into account unemployment, pollution, health, life expectancy, or free time. After ___33___ debate and analysis of the average income, historians have agreed to disagree on whether there was rapid or slow economic growth during the Industrial Revolution. Instead, they have decided to ___34___ how the Industrial Revolution was affected by other events. They have determined that the Industrial Revolution had an overall positive ___35___, but it quite possibly was neutralized by negative events such as wars, high taxes, and rapid population growth.",
+      "wordBank": {
+        "A": "available",
+        "B": "deteriorating",
+        "C": "earned",
+        "D": "effect",
+        "E": "enhance",
+        "F": "exactly",
+        "G": "exhausting",
+        "H": "experience",
+        "I": "increased",
+        "J": "interpret",
+        "K": "occurred",
+        "L": "peculiar",
+        "M": "probably",
+        "N": "squeezed",
+        "O": "typically"
+      },
+      "blanks": [
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35
+      ]
+    },
+    "matching": {
+      "kind": "matching",
+      "title": "The Star Quality of New Zealand’s Great Barrier Island",
+      "paragraphs": {
+        "A": "I was glad I had such terrible jetlag. Wide awake at 3:30am with our nine-year-old daughter on our lodge balcony, I stared for hours at the most incredible night sky I’ve ever seen before the dawn slowly started to rub out the stars on the horizon and the multiple shooting stars faded away.",
+        "B": "We were going to my wife’s big family reunion in Auckland, New Zealand, but when we found out that Great Barrier Island, just off the coast, had been recently awarded Dark Sky Sanctuary status—a typically remote area that has an “exceptional or distinguished quality of starry nights”—-we thought it would be the perfect place to relax before our busy schedule. It’s the first island and only the fourth location in the world to achieve this status.",
+        "C": "After a 28-hour flight with two travel-sick children, our hearts sank when we saw the tiny twin engine 10-seater that was to take us the 90km across the Hauraki Gulf to Great Barrier Island. But we needn’t have worried. Whether it was the gravity force of the plane climbing or the noise of the engine, it put our three-year-old daughter instantly to sleep until we bumped down on the grass at Claris Airport. Our first empty sick bag against all the odds... Things were looking up.",
+        "D": "Great Barrier Island has no public facilities and the 950 people living there (though only about half permanently) rely on solar and wind energy, and bottled gas for cooking. There are no streetlights. There are no cash machines or banks. The police force comprises a husband and wife, and there’s one postman. It’s not just the lack of light but the lack of noise that’s so delightful on this unique and gorgeous scene. It was first discovered by East Polynesians about 700 years ago and the Maori name for the island is Aotea. Captain Cook gave the island its European name, because it acts as a barrier between the Pacific and the Hauraki Gulf.",
+        "E": "The climate here is subtropical like Auckland’s. The island boasts a beautiful wilderness with dense forests, glorious, unspoilt sandy beaches and plenty of bays and a few mountainous areas where there are good walking tracks among the wetlands and valleys. You can birdwatch, dive, surf and boat. The best beaches are on the eastern side of the island where the surf is better, too. The sheltered western side is where you’ll find the best diving and boating. Lots of people come here for the fantastic fishing spots around the island. Like a lot of spots in New Zealand, there are whale-watching trips and you might just catch sight of sharks.",
+        "F": "It’s rare to find an island that really does feel undiscovered—but this is it. When one of my wife’s relations, who comes here regularly, found out that we’d been there, he whispered to us, only half-joking: “Shh—don’t tell anyone!” The locals are a relaxed and friendly bunch—a lot of them told us that it’s like what Waiheke Island (now in effect a suburb of Auckland) was in the 1970s when it was a commune of artists and people wanting to escape the city.",
+        "G": "Our guide for some of our stay was the inestimable Hilde Hoven, a Dark Sky ambassador who runs Good Heavens with Deborah Kilgallon and Orla Cumisky. They bring their Dobsonian telescope and beanbags (it’s hard work staring up wide-eyed in wonder without neck support) and, our elder daughter was glad to hear, hot chocolate to wherever you are on the island. “It’s odd but when the light readings were done,” said Hilde, explaining how the island was awarded its special status, “they found there was more light pollution on the northern side coming from Fiji, which is about 3,000km away, than Auckland to the south. It’s pretty dark!”",
+        "H": "Beginning their astronomical PowerPoint demonstration using a green laser pointer, Hilde and Orla showed us the Messier 4 spherical cluster ) with white dwarf stars, Saturn and its rings, the Southern Cross and the Milky Way, which stretched across the sky. Our daughter was especially taken with Hilde’s narrating of the Maori myth of Maui’s fish hook to explain the shape of Scorpius. In the fable, Maui hauled the North Island of New Zealand from the bottom of the ocean with his hook.",
+        "I": "We stayed at Mount St Paul’s Estate, a luxurious lodge run by the friendly Chris and Teara, both from Canada. Teara used to be a chef at the Langham in Auckland and so dinner, eaten around a huge circular table (made of one of the most ancient trees in the world), was every bit as mouth-watering as you’d expect. Eating pancakes on the balcony overlooking the unspoilt white sandy beach was a great way to start the day.",
+        "J": "Another highlight was an hour-long walk to Kaitoke hot pools in the centre of the island, through wetlands and a forest, where we whiled away a good hour sitting in the pools shaded from the heat by layers of delicate umbrella-like plants.",
+        "K": "We also loved visiting the potter Sarah Harrison, who showed us round her studio at Shoal Bay harbour, and her many pots and jugs, plates and bowls and colourful mosaics. In her work, she also uses a lot of materials found on the beach. Our elder daughter loved the gorgeous hidden pool at Medlands beach where the water is separated from the sea in a private rock pool. Other high points were the ancient pōhutukawa trees and the incredible views of Okiwi Basin and Whangapoua beach from the top of Windy Canyon, just a 10-minute hike through a narrow valley up some steep wooden steps on the eastern side of the island.",
+        "L": "Apparently the island council turned down famous musician Paul McCartney’s application to buy a property at Great Barrier Island because of the unwelcome attention he would have brought. You can see why he wanted to come here; equally, the island knows exactly what kind of star watching it prefers."
+      },
+      "letters": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H",
+        "I",
+        "J",
+        "K",
+        "L"
+      ]
+    },
+    "passage1": {
+      "kind": "passage",
+      "text": "Is organic food worth the higher price? It’s the classic grocery store dilemma. On the one hand, your family dinner table deserves only the best. On the other hand, your wallet can only stretch so far. Whether or not to buy organic is a personal decision, said Mike von Massow, professor of Food Agriculture. Science won’t give a clear-cut answer to the question of whether organic food is “better.” There are often trade-offs and answers become less definitive depending on the product under consideration. One thing is definitive: Organic and conventionally grown food are equally nutritious. From a nutrition point of view, there is no difference between organic and traditionally grown products. Organic products don’t necessarily have fewer pesticides —in fact, they may have more. There is also no big difference between organic and non-organic products from a food-safety perspective. Even organic growers use pesticides. Testing shows little if any pesticide remains on conventionally grown products. In fact, organic farmers often use larger quantities of pesticide because they can only use the natural variety of insect-killers. Chemical pesticides generally kill a much wider range of pests than any single natural pesticide. The use of animal waste in organic agriculture can also be a factor in the spread of bacteria like E. coli and salmonella. Over the past 10 years, Canada has seen more food-safety recalls for organic products, proportionally, than for conventional products. On the whole, organic agriculture may have a smaller environmental footprint. That’s mostly because the risk of groundwater contamination from organic farming is lower. Organic farmers never used neonics, the controversial pesticides that have been linked to shrinking bee populations worldwide. Traditional agriculture has been making “dramatic improvements” to reduce its impact on the environment. It isn’t a black-and-white picture, though. Organic farming is much less efficient when it comes to land use, although yields vary considerably depending on the crop. On the other hand, advocates of organic farming argue yields and efficiency could be significantly improved if the food industry devoted as much research and money to organic farming as it does conventional agriculture"
+    },
+    "passage2": {
+      "kind": "passage",
+      "text": "It is still controversial whether we are fundamentally generous or selfish and whether these tendencies are shaped by our genes or environment. Some evidence points to humans being born cooperative. At later stages in life we routinely work together to reach goals and help out in times of need. Yet instances of selfish behavior are also plenty. One recent study tested people’s willingness to set aside selfish interests to reach a greater good. It found that being selfish was more advantageous than cooperating. The benefit may be short-lived, however. Another study showed that players who cooperated did better in the long run. It seems that human nature supports both pro-social and selfish traits. Genetic studies have made some progress toward identifying their biological roots. By comparing identical twins, who share nearly 100 percent of their genes, and non-identical twins, who share about half, researchers have found overwhelming evidence for genetic effects on behaviors. In these twin studies, identical and non-identical twins are asked, for example, to split a sum of money with a peer. Such studies often also rely on careful psychological assessments and DNA analysis. Other work highlights specific genes as key players. My colleagues and I recently identified a gene linked to altruistic ) behavior and found that a particular variant of it was associated with more selfish behavior in preschoolers. According to evolutionary scientists, cooperative behavior may have evolved first among relatives to promote the continuation of their genetic line. As communities diversified, mutual support could have broadened to include individuals not linked by blood. Another possibility is that humans cooperate to gain some advantage, such as boosting reputation. Finally, evolutionary processes take place at the group level. Groups of highly cooperative individuals have higher chances of survival because they can work together to reach goals that are unattainable to less cooperative groups. Yet almost no behavior is entirely genetic, even among identical twins. Culture, schooling and parenting are important determinants of cooperation. Thus, the degree to which we act cooperatively or selfishly is unique to each individual and depends on a variety of genetic and environmental influences."
+    }
+  },
+  "warnings": [],
+  "audioFile": "listening.mp3",
+  "audioUrl": "https://cet46-preparation-jqk-2026.just-elf-6358.chatgpt.site/assets/audio/cet4/2026_06_1/listening.mp3"
+}
