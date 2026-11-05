@@ -28,7 +28,7 @@ function esc(v=""){return String(v??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":
 function key(e){return e.level+"_"+e.id}
 function levelName(level){return level==="cet6"?"CET-6 六级":"CET-4 四级"}
 function fileUrl(e,name){
-  if(name==="listening.mp3"&&e.audioUrl)return ["localhost","127.0.0.1"].includes(location.hostname)?`./assets/audio/${e.level}/${e.id}/${name}`:e.audioUrl;
+  if(name==="listening.mp3"&&e.audioUrl)return ["localhost","127.0.0.1"].includes(location.hostname)?`./assets/audio/${e.level}/${e.id}/${e.audioFile||name}`:e.audioUrl;
   return ["localhost","127.0.0.1"].includes(location.hostname)?localFileUrl(e,name):ORIGIN+"/"+e.level+"/"+e.id+"/"+name;
 }
 function localFileUrl(e,name){return "./library/"+e.level+"/"+e.id+"/"+name}
@@ -528,7 +528,7 @@ app.addEventListener("change",async e=>{
 });
 window.addEventListener("hashchange",()=>{render();window.scrollTo(0,0)});
 setInterval(()=>{const clock=app.querySelector(".mistake-clock");if(clock)clock.textContent=nowTime()},30000);
-fetch("./bank/manifest.json?v=20261105-1").then(r=>{if(!r.ok)throw Error("题库清单不可用");return r.json()}).then(manifest=>{
+fetch("./bank/manifest.json?v=20261105-3").then(r=>{if(!r.ok)throw Error("题库清单不可用");return r.json()}).then(manifest=>{
   state.manifest=manifest;
   render();
 }).catch(err=>showLoadFailure(err.message));
