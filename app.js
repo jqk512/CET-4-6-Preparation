@@ -1,6 +1,7 @@
 import { initEmojiPhysics, destroyEmojiPhysics } from "./emoji-physics.js?v=20261104-3";
 import { playUiSound, startCharge, updateCharge, stopCharge } from "./ui-sound.js?v=20261104-1";
 const app = document.getElementById("app");
+const CONTENT_VERSION = "20261106-3";
 const ORIGIN = "https://couldyyy9.github.io/cet-website/library";
 const STORE = "cet46-prep:v1";
 const examResourceCache = new Map();
@@ -266,8 +267,8 @@ function loadExamResources(meta){
   const examKey=key(meta);
   if(!examResourceCache.has(examKey)){
     const pending=Promise.all([
-      fetch("./bank/"+meta.file).then(r=>{if(!r.ok)throw Error("题库加载失败");return r.json()}),
-      fetch("./bank/extra/"+examKey+".json").then(r=>r.ok?r.json():null).catch(()=>null)
+      fetch("./bank/"+meta.file+"?v="+CONTENT_VERSION).then(r=>{if(!r.ok)throw Error("题库加载失败");return r.json()}),
+      fetch("./bank/extra/"+examKey+".json?v="+CONTENT_VERSION).then(r=>r.ok?r.json():null).catch(()=>null)
     ]).catch(error=>{examResourceCache.delete(examKey);throw error});
     examResourceCache.set(examKey,pending);
   }
@@ -549,7 +550,7 @@ app.addEventListener("change",async e=>{
 window.addEventListener("hashchange",()=>{render();window.scrollTo(0,0)});
 window.addEventListener("keydown",event=>{if(event.key==="Escape"&&state.route==="/mistakes"&&state.mistakeOpen){state.mistakeOpen=null;mistakes()}});
 setInterval(()=>{const clock=app.querySelector(".mistake-clock");if(clock)clock.textContent=nowTime()},30000);
-fetch("./bank/manifest.json?v=20261106-1").then(r=>{if(!r.ok)throw Error("题库清单不可用");return r.json()}).then(manifest=>{
+fetch("./bank/manifest.json?v="+CONTENT_VERSION).then(r=>{if(!r.ok)throw Error("题库清单不可用");return r.json()}).then(manifest=>{
   state.manifest=manifest;
   render();
 }).catch(err=>showLoadFailure(err.message));
