@@ -27,7 +27,10 @@ function save(){localStorage.setItem(STORE,JSON.stringify(state.data))}
 function esc(v=""){return String(v??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[c]))}
 function key(e){return e.level+"_"+e.id}
 function levelName(level){return level==="cet6"?"CET-6 六级":"CET-4 四级"}
-function fileUrl(e,name){return ["localhost","127.0.0.1"].includes(location.hostname)?localFileUrl(e,name):ORIGIN+"/"+e.level+"/"+e.id+"/"+name}
+function fileUrl(e,name){
+  if(name==="listening.mp3"&&e.audioUrl)return ["localhost","127.0.0.1"].includes(location.hostname)?`./assets/audio/${e.level}/${e.id}/${name}`:e.audioUrl;
+  return ["localhost","127.0.0.1"].includes(location.hostname)?localFileUrl(e,name):ORIGIN+"/"+e.level+"/"+e.id+"/"+name;
+}
 function localFileUrl(e,name){return "./library/"+e.level+"/"+e.id+"/"+name}
 function chineseSet(value){return ["零","一","二","三","四","五","六","七","八","九","十"][Number(value)]||String(value)}
 function titleFor(e){return e.year+"年"+e.month+"月 · 第"+chineseSet(e.set)+"套"}
@@ -525,7 +528,7 @@ app.addEventListener("change",async e=>{
 });
 window.addEventListener("hashchange",()=>{render();window.scrollTo(0,0)});
 setInterval(()=>{const clock=app.querySelector(".mistake-clock");if(clock)clock.textContent=nowTime()},30000);
-fetch("./bank/manifest.json").then(r=>{if(!r.ok)throw Error("题库清单不可用");return r.json()}).then(manifest=>{
+fetch("./bank/manifest.json?v=20261105-1").then(r=>{if(!r.ok)throw Error("题库清单不可用");return r.json()}).then(manifest=>{
   state.manifest=manifest;
   render();
 }).catch(err=>showLoadFailure(err.message));
