@@ -17,19 +17,33 @@ root.innerHTML = `
       <div class="support-dialog-mark" aria-hidden="true">✦</div>
       <h2 id="support-title">希望对你有帮助，<br>我的朋友。</h2>
       <div class="support-link-row"><span>支持一下👉</span><a href="./assets/support-qr.jpg" target="_blank" rel="noopener noreferrer">打赏</a></div>
+      <div class="support-qr" hidden><img src="./assets/support-qr.jpg" alt="打赏收款码"><p>感谢支持</p></div>
     </section>
   </div>
   <div class="support-particles" aria-hidden="true"></div>`;
 
 const button = root.querySelector(".support-float");
 const overlay = root.querySelector(".support-overlay");
+const dialog = root.querySelector(".support-dialog");
+const qr = root.querySelector(".support-qr");
 const particles = root.querySelector(".support-particles");
 let previousFocus;
 
 function close() {
   overlay.hidden = true;
+  dialog.classList.remove("qr-view");
+  qr.hidden = true;
   document.body.classList.remove("support-open");
   previousFocus?.focus?.();
+}
+
+function openQr() {
+  previousFocus = document.activeElement;
+  qr.hidden = false;
+  dialog.classList.add("qr-view");
+  overlay.hidden = false;
+  document.body.classList.add("support-open");
+  root.querySelector(".support-close").focus();
 }
 
 function burst() {
@@ -65,3 +79,4 @@ root.querySelector(".support-close").addEventListener("click", close);
 root.querySelector(".support-link-row a").addEventListener("click", () => playUiSound("click"));
 overlay.addEventListener("click", event => { if (event.target === overlay) close(); });
 document.addEventListener("keydown", event => { if (event.key === "Escape" && !overlay.hidden) close(); });
+if (new URLSearchParams(location.search).get("donate") === "1") openQr();

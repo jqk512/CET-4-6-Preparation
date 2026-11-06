@@ -641,6 +641,10 @@ html,body,#app{min-height:100%;background:#c5c8ca}
 .support-link-row{display:flex;justify-content:center;align-items:baseline;gap:4px;margin-top:24px;color:#141414;font-size:16px;font-weight:700;line-height:1.5}
 .support-link-row a{color:#141414;font:inherit;font-weight:800;border-bottom:1.5px solid #111}
 .support-link-row a:hover{color:#e94885;border-color:#e94885}
+.support-dialog.qr-view{padding:45px 28px 25px}
+.support-dialog.qr-view .support-dialog-mark,.support-dialog.qr-view #support-title,.support-dialog.qr-view .support-link-row{display:none}
+.support-qr img{display:block;width:min(100%,330px);height:auto;margin:0 auto;border-radius:14px}
+.support-qr p{margin:16px 0 0;font-size:15px;font-weight:700;color:#303030}
 .support-particles{position:fixed;inset:0;pointer-events:none;z-index:2}
 .support-particles span{position:absolute;display:block;font-size:30px;line-height:1;transform:translate(-50%,-50%);animation:support-burst .75s cubic-bezier(.15,.7,.3,1) forwards;will-change:transform,opacity}
 @keyframes support-burst{0%{opacity:1;transform:translate(-50%,-50%) scale(.35) rotate(0)}65%{opacity:1}100%{opacity:0;transform:translate(calc(-50% + var(--burst-x)),calc(-50% + var(--burst-y))) scale(1.22) rotate(var(--burst-turn))}}
