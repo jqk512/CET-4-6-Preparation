@@ -555,6 +555,62 @@
 .folder-preview-card,.mistake-file,.mistake-file.selected,.mistake-file-detail,.empty-folder-icon{box-shadow:none}
 .empty-folder-icon{background:#ecaaa3}
 .floating-text-window{box-shadow:none;background:#f7f8f6}
+.exam-app .quiz-header{overflow:visible}
+.exam-app .exam-window-controls{align-items:flex-end}
+.exam-app .exam-window-controls .window-dot{margin-bottom:9px}
+.text-scale-control{display:flex;align-items:flex-end;gap:7px;margin-left:3px}
+.exam-app:not(:has(.passage)) .text-scale-control{display:none}
+.text-scale-control output{min-width:34px;margin-bottom:9px;color:#138c2d;font:800 12px/1 Arial,Helvetica,sans-serif;font-variant-numeric:tabular-nums}
+.text-scale-end{margin-bottom:9px;font:700 12px/1 Arial,Helvetica,sans-serif;color:#5c6e60;white-space:nowrap}
+.text-scale-slider{width:270px;height:118px;flex:none;cursor:grab;touch-action:none;outline:none}
+.text-scale-slider.is-dragging{cursor:grabbing}
+.text-scale-slider:focus-visible .balloon-track{stroke:#28c840;stroke-width:2.5}
+.text-scale-slider svg{display:block;width:100%;height:100%;overflow:visible}
+.balloon-track{fill:#fff;stroke:#171b17;stroke-width:1.5}
+.balloon-fill{fill:#171b17}
+.balloon-string{fill:none;stroke:#303a32;stroke-width:1.4;stroke-linecap:round;stroke-linejoin:round}
+.balloon-body,.balloon-knot{fill:#28c840}
+.balloon-tie{fill:none;stroke:#096b25;stroke-width:.035;stroke-linecap:round}
+.exam-app .passage-text{font-size:calc(15px * var(--reading-scale,1))}
+.exam-app .floating-text-body{font-size:calc(16px * var(--reading-scale,1))}
+.passage-grip{display:flex;align-items:center;gap:10px;width:max-content;max-width:100%;min-height:28px;cursor:grab;touch-action:none;user-select:none}
+.passage-grip:active{cursor:grabbing}
+.passage-grip span{color:#62856b;font-size:16px;letter-spacing:-5px;margin-right:5px}
+.passage-restore-hint{display:none}
+.passage.is-floating{position:fixed;z-index:95;max-width:calc(100vw - 16px);max-height:calc(100vh - 16px);margin:0;overflow:auto;overscroll-behavior:contain;border-color:#d9e3da;background:#fafbf9;box-shadow:0 14px 38px #19241b26}
+.passage.is-floating .passage-text{max-height:none;overflow:visible}
+.passage.is-floating .passage-grip{position:sticky;top:0;z-index:1;width:100%;padding:8px 0;background:#fafbf9;flex-wrap:wrap}
+.passage.is-floating .passage-restore-hint{display:block;flex-basis:100%;margin-top:0;color:#718078;font:600 11px/1.3 Arial,Helvetica,"PingFang SC",sans-serif;letter-spacing:0}
+body:has(.passage.is-floating) .support-float,body:has(.floating-text-window) .support-float{visibility:hidden;pointer-events:none}
+@media(max-width:760px){.exam-app .exam-window-controls .window-dot{margin-bottom:0}.text-scale-control{gap:4px}.text-scale-slider{width:160px;height:70px}.text-scale-end,.text-scale-control output{margin-bottom:0;font-size:11px}.text-scale-control output{min-width:30px}.floating-text-window{top:auto;bottom:16px;left:12px;transform:none;width:calc(100vw - 24px);height:min(42vh,380px);min-width:0;min-height:180px;resize:none}}
+.sound-toggle{position:absolute;left:18px;bottom:30px;z-index:1;width:46px;height:46px;display:grid;place-items:center;border:1px solid #ffffffc9;border-radius:50%;background:#ffffffd9;box-shadow:0 6px 22px #20252926;backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);font-size:21px;line-height:1;cursor:pointer;pointer-events:auto}
+.sound-toggle:hover{transform:scale(1.07)}
+.sound-toggle:focus-visible{outline:2px solid #111;outline-offset:3px}
+.support-contact{margin:14px 0 0;color:#777;font:500 11px/1.6 Arial,Helvetica,"PingFang SC",sans-serif}
+.support-contact a{color:inherit;text-decoration:underline;text-underline-offset:2px}
+.support-dialog.qr-view .support-contact{display:none}
+.exam-app .option.selected:not(.wrong){background:var(--accent);border-color:var(--accent);color:#fff}
+.exam-app .option.selected:not(.wrong) b{background:#fff;color:var(--accent)}
+.exam-app .inline-trigger.has-answer{background:var(--accent);color:#fff}
+.exam-app .question-map button{background:#fff;color:#111}
+.exam-app .question-map button.answered,.exam-app .question-map button.answered.current{background:#111;color:#fff}
+.exam-app .question-map button.incorrect{background:#fff;color:#f02a43}
+.exam-app .question-map button.incorrect.current{background:#f02a43;color:#fff}
+.exam-app .question-map button.current:not(.incorrect):not(.answered){background:#fff;outline:2px solid #111;outline-offset:1px}
+.passage.is-floating{display:flex;flex-direction:column;overflow:hidden;resize:none}
+.passage.is-floating .passage-grip{flex:none}
+.passage.is-floating .passage-scroll{flex:1;min-height:0;overflow:auto}
+.floating-text-window{resize:none}
+.window-resize-handle{position:absolute;z-index:8;display:block;touch-action:none;background:transparent}
+.passage:not(.is-floating)>.window-resize-handle{display:none}
+.resize-n,.resize-s{left:18px;right:18px;height:9px;cursor:ns-resize}
+.resize-n{top:0}.resize-s{bottom:0}
+.resize-e,.resize-w{top:18px;bottom:18px;width:9px;cursor:ew-resize}
+.resize-e{right:0}.resize-w{left:0}
+.resize-ne,.resize-nw,.resize-se,.resize-sw{width:18px;height:18px}
+.resize-ne{top:0;right:0;cursor:nesw-resize}.resize-nw{top:0;left:0;cursor:nwse-resize}
+.resize-se{bottom:0;right:0;cursor:nwse-resize}.resize-sw{bottom:0;left:0;cursor:nesw-resize}
+@media(max-width:760px){.sound-toggle{left:10px;bottom:20px;width:42px;height:42px;font-size:19px}}
 @media(max-width:760px){
   .showcase-wrap{padding:14px;background:#c5c8ca}
   .showcase-stage{height:calc(100svh - 28px);min-height:650px;border-radius:23px}

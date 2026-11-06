@@ -2,6 +2,7 @@
 let context;
 let unlocked = false;
 let charge;
+let muted = localStorage.getItem("cet46-sound-muted") === "1";
 const lastPlayed = new Map();
 const AudioContextClass = window.AudioContext || window.webkitAudioContext;
 if (AudioContextClass) {
@@ -12,8 +13,19 @@ if (AudioContextClass) {
 }
 
 function allowed() {
-  return !location.hash.startsWith("#/exam/") && !document.hidden;
+  return !muted && !location.hash.startsWith("#/exam/") && !document.hidden;
 }
+
+export function isUiSoundMuted() { return muted; }
+export function setUiSoundMuted(value) {
+  muted = !!value;
+  localStorage.setItem("cet46-sound-muted", muted ? "1" : "0");
+  document.querySelectorAll("audio,video").forEach(media => { media.muted = muted; });
+  if (muted) stopCharge(false);
+}
+document.addEventListener("play", event => {
+  if (muted && event.target instanceof HTMLMediaElement) event.target.muted = true;
+}, true);
 
 function audio() {
   if (!AudioContextClass) return null;

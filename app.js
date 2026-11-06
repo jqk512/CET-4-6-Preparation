@@ -1,5 +1,5 @@
 import { initEmojiPhysics, destroyEmojiPhysics } from "./emoji-physics.js?v=20261104-3";
-import { playUiSound, startCharge, updateCharge, stopCharge } from "./ui-sound.js?v=20261104-1";
+import { playUiSound, startCharge, updateCharge, stopCharge, isUiSoundMuted } from "./ui-sound.js?v=20261106-2";
 const app = document.getElementById("app");
 const CONTENT_VERSION = "20261106-3";
 const ORIGIN = "https://couldyyy9.github.io/cet-website/library";
@@ -15,8 +15,10 @@ const SECTIONS = [
 const state = {
   manifest:null, bank:null, extra:null, route:"/",
   level:"cet4", activeSection:"listening",
-  data:readStore(), startedAt:Date.now(), loading:false, largeText:false,
-  mistakeIndex:0, mistakeOpen:null, mistakeItem:0, lastMistakeWheel:0
+  data:readStore(), startedAt:Date.now(), loading:false,
+  textScale:Math.max(.9,Math.min(1.6,Number(localStorage.getItem("cet46-text-scale"))||1)),
+  textScaleCleanup:null, passageDragCleanup:null,
+  mistakeIndex:0, mistakeOpen:null, mistakeItem:0, lastMistakeWheel:0, focusedQuestionNo:null
 };
 function readStore(){
   try {
@@ -66,7 +68,7 @@ function showLoadFailure(message){
   app.innerHTML=`<main class="showcase-wrap"><section class="showcase-stage boot-stage">${showcaseHeader("home")}<div class="boot-message"><h1>资源加载失败</h1><p>${esc(message)}</p><button class="showcase-cta" onclick="location.reload()">重新加载 ↗</button></div></section></main>`;
 }
 function examFrame(content,level="cet4"){
-  app.innerHTML=`<main class="exam-app level-${level} ${state.largeText?"text-large":""}">${showcaseHeader("papers")}<div class="exam-workspace">${content}</div><footer class="exam-footer">CET-4/6 Preparation <span>Practice at your own pace.</span></footer></main>`;
+  app.innerHTML=`<main class="exam-app level-${level}" style="--reading-scale:${state.textScale}">${showcaseHeader("papers")}<div class="exam-workspace">${content}</div><footer class="exam-footer">CET-4/6 Preparation <span>Practice at your own pace.</span></footer></main>`;
 }
 function showcaseHeader(active){
   return `<header class="showcase-header"><a class="showcase-brand" href="#/"><img class="showcase-logo" src="./assets/logo.png" alt="CET logo"><span>CET-4/6<br><small>PREPARATION</small></span></a><nav aria-label="Main navigation"><a class="${active==="home"?"selected":""}" href="#/">Home</a><a class="${active==="papers"?"selected":""}" href="#/practice">Exam papers</a><a class="${active==="mistakes"?"selected":""}" href="#/mistakes">Mistakes</a></nav></header>`;
@@ -278,7 +280,7 @@ async function openExam(examKey){
   const meta=state.manifest.exams.find(e=>key(e)===examKey);
   if(!meta){go("/practice");return}
   const requestId=state.examRequestId=(state.examRequestId||0)+1;
-  state.loading=true;state.bank=null;state.extra=null;state.activeSection="listening";go("/exam/"+examKey);
+  state.loading=true;state.bank=null;state.extra=null;state.activeSection="listening";state.focusedQuestionNo=null;go("/exam/"+examKey);
   try{
     const [bank,extra]=await loadExamResources(meta);
     if(requestId!==state.examRequestId)return;
@@ -294,7 +296,7 @@ function passageHtml(s){
   if(p.kind==="matching")body=Object.entries(p.paragraphs||{}).map(([letter,txt])=>`<div class="para"><b>${esc(letter)}</b> &nbsp; ${esc(txt)}</div>`).join("");
   else body=esc(p.text||"");
   const bank=p.wordBank? `<div class="wordbank">${Object.entries(p.wordBank).map(([l,w])=>`<span><b>${esc(l)}</b> ${esc(w)}</span>`).join("")}</div>`:"";
-  return `<div class="passage"><h3>材料</h3><div class="passage-text">${body}</div>${bank}</div>`;
+  return `<div class="passage" data-passage-section="${esc(s.key)}"><h3 class="passage-grip" title="拖动材料框">材料 <span aria-hidden="true">⋮⋮</span><small class="passage-restore-hint">按 Esc 复原</small></h3><div class="passage-scroll"><div class="passage-text">${body}</div>${bank}</div></div>`;
 }
 function questionHtml(q,answers,submitted){
   const chosen=answers[q.no]||"",letters=q.kind==="cloze"?Object.keys(state.bank.passages?.cloze?.wordBank||{}):q.kind==="matching"?(state.bank.passages?.matching?.letters||Object.keys(state.bank.passages?.matching?.paragraphs||{})):Object.keys(q.options||{});
@@ -326,14 +328,16 @@ function exam(){
   const section=state.activeSection==="writing"&&state.extra?.writing?{key:"writing",name:"写作"}:state.activeSection==="translation"&&state.extra?.translation?{key:"translation",name:"翻译"}:(sections.find(s=>s.key===state.activeSection)||sections[0]);state.activeSection=section.key;
   const questions=bank.questions.filter(q=>sectionFor(q)===section.key);
   const max=bank.questions.length,count=Object.keys(answers).length;
-  const audio=bank.hasAudio&&section.key==="listening"?`<audio class="audio" controls preload="none" src="${fileUrl(bank,"listening.mp3")}"></audio>`:"";
+  const audio=bank.hasAudio&&section.key==="listening"?`<audio class="audio" controls preload="none" ${isUiSoundMuted()?"muted":""} src="${fileUrl(bank,"listening.mp3")}"></audio>`:"";
   const tabs=`${sections.slice(0,1).map(s=>`<button data-section="${s.key}" class="${s.key===section.key?"active":""}">${s.name}</button>`).join("")}${state.extra?.writing?`<button data-section="writing" class="${section.key==="writing"?"active":""}">写作</button>`:""}${sections.slice(1).map(s=>`<button data-section="${s.key}" class="${s.key===section.key?"active":""}">${s.name}</button>`).join("")}${state.extra?.translation?`<button data-section="translation" class="${section.key==="translation"?"active":""}">翻译</button>`:""}`;
-  examFrame(`<div class="quiz-layout"><div class="quiz-main"><div class="quiz-header"><div class="exam-window-controls" role="group" aria-label="文本工具"><button class="window-dot window-back" data-ui-control="back" aria-label="返回上一个页面" title="返回上一个页面">${trafficGlyph("close")}</button><button class="window-dot window-text" data-ui-control="window" aria-label="窗口化文本" aria-pressed="false" title="窗口化文本">${trafficGlyph("minimize")}</button><button class="window-dot window-large" data-ui-control="large" aria-label="放大文本" aria-pressed="${state.largeText}" title="放大文本">${trafficGlyph("expand")}</button></div><div class="quiz-header-top"><h1>${esc(titleFor(bank))}</h1><div class="quiz-progress-wrap"><div class="quiz-progress-ring" role="progressbar" aria-label="答题进度" aria-valuemin="0" aria-valuenow="${count}" aria-valuemax="${max}" style="--progress:${100*count/max}%"><span class="quiz-progress-count">${count}<small>/${max}</small></span></div></div></div>${audio}</div>
+  examFrame(`<div class="quiz-layout"><div class="quiz-main"><div class="quiz-header"><div class="exam-window-controls" role="group" aria-label="文本工具"><button class="window-dot window-back" data-ui-control="back" aria-label="返回上一个页面" title="返回上一个页面">${trafficGlyph("close")}</button><button class="window-dot window-text" data-ui-control="window" aria-label="取下阅读材料" aria-pressed="false" title="取下阅读材料">${trafficGlyph("minimize")}</button><div class="text-scale-control" role="group" aria-label="阅读材料文字大小"><span class="text-scale-end">A−</span><div class="text-scale-slider" role="slider" tabindex="0" title="拖动气球缩放材料文字" aria-label="阅读材料文字大小" aria-valuemin="90" aria-valuemax="160" aria-valuenow="${Math.round(state.textScale*100)}" aria-valuetext="${Math.round(state.textScale*100)}%"><svg viewBox="0 0 320 140" aria-hidden="true"><rect class="balloon-track" x="16" y="116" width="288" height="8"/><rect class="balloon-fill" x="16" y="116" width="0" height="8"/><path class="balloon-string" d=""/><g class="balloon-shape"><path class="balloon-body" d="M 0 -2.4 C -0.64 -2.5 -1.04 -2.07 -1 -1.45 C -1.05 -0.8 -0.6 -0.22 -0.12 -0.04 Q 0 0.02 0.12 -0.04 C 0.6 -0.22 1.05 -0.8 1 -1.45 C 1.04 -2.07 0.64 -2.5 0 -2.4 Z"/><path class="balloon-knot" d="M -0.12 -0.06 L -0.13 0.12 Q 0 0.18 0.13 0.12 L 0.12 -0.06 Z M -0.13 0.12 L -0.22 0.30 Q 0 0.21 0.22 0.30 L 0.13 0.12 Z"/><path class="balloon-tie" d="M -0.13 0.12 Q 0 0.17 0.13 0.12"/></g></svg></div><span class="text-scale-end">A＋</span><output>${Math.round(state.textScale*100)}%</output></div></div><div class="quiz-header-top"><h1>${esc(titleFor(bank))}</h1><div class="quiz-progress-wrap"><div class="quiz-progress-ring" role="progressbar" aria-label="答题进度" aria-valuemin="0" aria-valuenow="${count}" aria-valuemax="${max}" style="--progress:${100*count/max}%"><span class="quiz-progress-count">${count}<small>/${max}</small></span></div></div></div>${audio}</div>
     ${submitted?`<div class="score-hero"><div><span>本次客观题估分</span><h2>练习结果</h2><strong>${r.score} <span>/ ${r.max}</span></strong><p style="margin:5px 0 0;font-size:12px">答对 ${r.correct} / ${r.total} 题 · 已答 ${r.answered} 题</p></div><div class="review-actions"><button class="btn white" data-reset="${examKey}">重新练习</button><button class="btn" data-route="/mistakes">错题复盘 →</button></div></div>`:""}
     <div class="section-tabs">${tabs}</div>
     ${section.key==="writing"||section.key==="translation"?subjectiveHtml(section.key,state.extra,examKey):section.key==="listening"&&bank.readingOnly?`<section class="missing-listening"><h2>听力理解</h2><p>原始第三套资料未提供独立听力题目和音频。同年同月第二套提供听力练习。</p><button class="btn dark" data-open-listening="${bank.level}_${bank.year}_${String(bank.month).padStart(2,"0")}_2">练习第二套听力 ↗</button></section>`:`<h2 class="question-section-heading">${esc(section.name)}</h2>${passageHtml(section)}${questions.map(q=>questionHtml(q,answers,submitted)).join("")}`}
     ${!submitted?`<button class="btn dark" data-submit="${examKey}">交卷并查看结果 →</button>`:""}</div>
-    <aside class="quiz-side"><div class="panel"><div class="section-bar"><h3>题号</h3></div><div class="question-map">${bank.questions.map(q=>`<button data-jump="${q.no}" class="${answers[q.no]?"answered":""} ${submitted&&answers[q.no]&&answers[q.no]!==q.answer?"incorrect":""} ${sectionFor(q)===section.key?"current":""}">${q.no}</button>`).join("")}</div><div class="side-footer">${submitted?`<button class="btn white" data-route="/practice">返回练习列表</button>`:`<button class="btn dark" data-submit="${examKey}">交卷查看成绩</button>`}</div></div></aside></div>`, bank.level);
+    <aside class="quiz-side"><div class="panel"><div class="section-bar"><h3>题号</h3></div><div class="question-map">${bank.questions.map(q=>`<button data-jump="${q.no}" class="${answers[q.no]?"answered":""} ${submitted&&answers[q.no]&&answers[q.no]!==q.answer?"incorrect":""} ${state.focusedQuestionNo===q.no?"current":""}">${q.no}</button>`).join("")}</div><div class="side-footer">${submitted?`<button class="btn white" data-route="/practice">返回练习列表</button>`:`<button class="btn dark" data-submit="${examKey}">交卷查看成绩</button>`}</div></div></aside></div>`, bank.level);
+  initTextScaleControl();
+  initPassageDetach();
 }
 function mistakeFolders(){
   const groups=new Map();
@@ -445,18 +449,66 @@ function closeRadialMenus(){
     box.classList.remove("is-open");box.querySelector(".inline-trigger")?.setAttribute("aria-expanded","false");
   });
 }
-function toggleTextWindow(){
-  const open=app.querySelector(".floating-text-window");
-  const trigger=app.querySelector('[data-ui-control="window"]');
-  if(open){open.remove();trigger?.setAttribute("aria-pressed","false");return}
-  const passage=app.querySelector(".passage-text,.subjective-prompt");
+function closeTextWindow(){
+  state.passageDragCleanup?.();
+  app.querySelector(".floating-text-window")?.remove();
+  const passage=app.querySelector(".passage.is-floating");
+  if(passage){
+    passage.classList.remove("is-floating");
+    for(const property of ["left","top","width","height"])passage.style.removeProperty(property);
+  }
+  app.querySelector('[data-ui-control="window"]')?.setAttribute("aria-pressed","false");
+}
+function enableWindowResize(element){
+  if(element.dataset.resizeReady)return;
+  element.dataset.resizeReady="1";
+  for(const direction of ["n","e","s","w","ne","nw","se","sw"]){
+    const handle=document.createElement("span");
+    handle.className=`window-resize-handle resize-${direction}`;
+    handle.setAttribute("aria-hidden","true");
+    element.appendChild(handle);
+    let drag=null;
+    handle.addEventListener("pointerdown",event=>{
+      if(event.button!==0)return;
+      event.preventDefault();event.stopPropagation();
+      const rect=element.getBoundingClientRect();
+      drag={id:event.pointerId,x:event.clientX,y:event.clientY,rect};
+      handle.setPointerCapture(event.pointerId);
+    });
+    handle.addEventListener("pointermove",event=>{
+      if(!drag||drag.id!==event.pointerId)return;
+      const {rect}=drag,dx=event.clientX-drag.x,dy=event.clientY-drag.y;
+      const minWidth=Math.min(280,innerWidth-16),minHeight=Math.min(180,innerHeight-16);
+      let left=rect.left,right=rect.right,top=rect.top,bottom=rect.bottom;
+      if(direction.includes("w"))left=Math.max(8,Math.min(right-minWidth,rect.left+dx));
+      if(direction.includes("e"))right=Math.min(innerWidth-8,Math.max(left+minWidth,rect.right+dx));
+      if(direction.includes("n"))top=Math.max(8,Math.min(bottom-minHeight,rect.top+dy));
+      if(direction.includes("s"))bottom=Math.min(innerHeight-8,Math.max(top+minHeight,rect.bottom+dy));
+      element.style.left=left+"px";element.style.top=top+"px";
+      element.style.width=right-left+"px";element.style.height=bottom-top+"px";
+      element.style.transform="none";
+    });
+    for(const type of ["pointerup","pointercancel","lostpointercapture"])handle.addEventListener(type,event=>{if(drag?.id===event.pointerId)drag=null});
+  }
+}
+function createTextWindow(point){
+  closeTextWindow();
+  const text=app.querySelector(".subjective-prompt");
   const stems=[...app.querySelectorAll(".question-stem")].map(x=>x.textContent.trim()).filter(Boolean);
-  const content=passage?passage.innerHTML:stems.length?stems.map(x=>`<p>${esc(x)}</p>`).join(""):`<p>本章节没有独立的文字材料。</p>`;
+  const content=text?text.innerHTML:stems.length?stems.map(x=>`<p>${esc(x)}</p>`).join(""):`<p>本章节没有独立的文字材料。</p>`;
   const section=app.querySelector(".question-section-heading,.subjective-paper h2")?.textContent||"文字材料";
   const floating=document.createElement("aside");
   floating.className="floating-text-window";floating.setAttribute("role","dialog");floating.setAttribute("aria-label",`${section}文字窗口`);
   floating.innerHTML=`<div class="floating-text-title"><strong>${esc(section)}</strong><button data-close-text-window="1" aria-label="关闭文字窗口">×</button></div><div class="floating-text-body">${content}</div>`;
-  app.appendChild(floating);trigger?.setAttribute("aria-pressed","true");
+  app.appendChild(floating);
+  enableWindowResize(floating);
+  app.querySelector('[data-ui-control="window"]')?.setAttribute("aria-pressed","true");
+  if(point){
+    const rect=floating.getBoundingClientRect();
+    floating.style.left=Math.max(8,Math.min(innerWidth-rect.width-8,point.x-rect.width*.22))+"px";
+    floating.style.top=Math.max(8,Math.min(innerHeight-rect.height-8,point.y-25))+"px";
+    floating.style.transform="none";
+  }
   const handle=floating.querySelector(".floating-text-title");
   let dragging=false,startX=0,startY=0,startLeft=0,startTop=0;
   handle.addEventListener("pointerdown",event=>{
@@ -473,6 +525,201 @@ function toggleTextWindow(){
   });
   handle.addEventListener("pointerup",()=>{dragging=false});
   handle.addEventListener("pointercancel",()=>{dragging=false});
+  return floating;
+}
+function toggleTextWindow(){
+  const passage=app.querySelector(".passage[data-passage-section]");
+  if(passage){
+    if(passage.classList.contains("is-floating")){closeTextWindow();return}
+    floatPassage(passage);
+    return;
+  }
+  if(app.querySelector(".floating-text-window"))closeTextWindow();else createTextWindow();
+}
+function floatPassage(passage){
+  if(passage.classList.contains("is-floating"))return passage;
+  const rect=passage.getBoundingClientRect();
+  const width=Math.min(rect.width,innerWidth-24,720);
+  const height=Math.min(rect.height,innerHeight*.68);
+  passage.style.width=width+"px";
+  passage.style.height=height+"px";
+  passage.style.left=Math.max(8,Math.min(innerWidth-width-8,rect.left))+"px";
+  passage.style.top=Math.max(8,Math.min(innerHeight-height-8,rect.top))+"px";
+  passage.classList.add("is-floating");
+  enableWindowResize(passage);
+  app.querySelector('[data-ui-control="window"]')?.setAttribute("aria-pressed","true");
+  window.getSelection()?.removeAllRanges();
+  return passage;
+}
+function initPassageDetach(){
+  const passage=app.querySelector(".passage[data-passage-section]");
+  if(!passage)return;
+  let timer=0,gesture=null;
+  const clamp=(v,min,max)=>Math.max(min,Math.min(max,v));
+  const stop=()=>{
+    clearTimeout(timer);timer=0;gesture=null;
+    window.removeEventListener("pointermove",pointerMove);
+    window.removeEventListener("pointerup",pointerEnd);
+    window.removeEventListener("pointercancel",pointerEnd);
+    window.removeEventListener("touchmove",touchMove);
+    window.removeEventListener("touchend",touchEnd);
+    window.removeEventListener("touchcancel",touchEnd);
+    window.removeEventListener("blur",stop);
+  };
+  const activate=()=>{
+    if(!gesture)return;
+    floatPassage(passage);
+    const rect=passage.getBoundingClientRect();
+    gesture.floating=true;gesture.left=rect.left;gesture.top=rect.top;
+    gesture.startX=gesture.x;gesture.startY=gesture.y;
+  };
+  const begin=(id,x,y,immediate,touch=false)=>{
+    if(gesture)return;
+    gesture={id,startX:x,startY:y,x,y,floating:false,touch};
+    if(immediate)activate();else timer=setTimeout(activate,320);
+    window.addEventListener("blur",stop);
+  };
+  const move=(x,y)=>{
+    if(!gesture)return;
+    gesture.x=x;gesture.y=y;
+    if(!gesture.floating){if(gesture.touch&&Math.hypot(x-gesture.startX,y-gesture.startY)>12)stop();return}
+    passage.style.left=clamp(gesture.left+x-gesture.startX,8,innerWidth-80)+"px";
+    passage.style.top=clamp(gesture.top+y-gesture.startY,8,innerHeight-48)+"px";
+  };
+  const pointerMove=event=>{if(gesture?.id!==event.pointerId)return;move(event.clientX,event.clientY);if(gesture?.floating)event.preventDefault()};
+  const pointerEnd=event=>{if(gesture?.id===event.pointerId)stop()};
+  const touchMove=event=>{
+    const touch=[...event.changedTouches].find(item=>item.identifier===gesture?.id);
+    if(!touch)return;
+    move(touch.clientX,touch.clientY);
+    if(gesture?.floating)event.preventDefault();
+  };
+  const touchEnd=event=>{if([...event.changedTouches].some(item=>item.identifier===gesture?.id))stop()};
+  passage.addEventListener("pointerdown",event=>{
+    if(event.target.closest(".window-resize-handle"))return;
+    if(event.pointerType==="touch"||event.button!==0)return;
+    const immediate=passage.classList.contains("is-floating")||!!event.target.closest(".passage-grip");
+    event.preventDefault();begin(event.pointerId,event.clientX,event.clientY,immediate);
+    window.addEventListener("pointermove",pointerMove,{passive:false});
+    window.addEventListener("pointerup",pointerEnd);
+    window.addEventListener("pointercancel",pointerEnd);
+  });
+  passage.addEventListener("touchstart",event=>{
+    if(event.target.closest(".window-resize-handle"))return;
+    if(event.touches.length!==1)return;
+    const touch=event.changedTouches[0];
+    const immediate=passage.classList.contains("is-floating")||!!event.target.closest(".passage-grip");
+    begin(touch.identifier,touch.clientX,touch.clientY,immediate,true);
+    window.addEventListener("touchmove",touchMove,{passive:false});
+    window.addEventListener("touchend",touchEnd);
+    window.addEventListener("touchcancel",touchEnd);
+    if(immediate)event.preventDefault();
+  },{passive:false});
+  passage.querySelector(".passage-grip")?.addEventListener("contextmenu",event=>event.preventDefault());
+  state.passageDragCleanup=stop;
+}
+function initTextScaleControl(){
+  const slider=app.querySelector(".text-scale-slider");
+  if(!slider)return;
+  const fill=slider.querySelector(".balloon-fill"),string=slider.querySelector(".balloon-string"),shape=slider.querySelector(".balloon-shape"),body=slider.querySelector(".balloon-body");
+  const output=app.querySelector(".text-scale-control output"),examApp=app.querySelector(".exam-app");
+  const clamp=(value,min,max)=>Math.max(min,Math.min(max,value));
+  const reducedMotion=matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const compact=matchMedia("(max-width: 760px)");
+  const progress=()=>clamp((state.textScale-.9)/.7,0,1);
+  const physics={air:progress(),airVelocity:0,swing:0,swingVelocity:0,pulse:0};
+  let drag=null,frame=0,visible=true,lastTime=0;
+  const paint=(now=0)=>{
+    const target=progress(),air=clamp(physics.air,0,1),anchorX=16+target*288;
+    const radius=(10+air*25)*(compact.matches?1.2:1)*(1+Math.sin(now*.0021)*(.006+air*.008));
+    const width=radius*(1+physics.pulse*.11),height=radius*(1-physics.pulse*.07);
+    const side=.73+air*.32,top=1.65+air*.25;
+    body.setAttribute("d",`M 0 -${top} C -${side*.7} -${top+.08} -${side*1.12} -${top*.77} -${side} -1.02 C -${side*.88} -.48 -.45 -.2 -.12 -.04 Q 0 .02 .12 -.04 C .45 -.2 ${side*.88} -.48 ${side} -1.02 C ${side*1.12} -${top*.77} ${side*.7} -${top+.08} 0 -${top} Z`);
+    const bodyX=anchorX+physics.swing;
+    const angle=clamp(physics.swing*.42+physics.swingVelocity*.024,-16,16);
+    shape.setAttribute("transform",`translate(${bodyX} 83) rotate(${angle}) scale(${width} ${height})`);
+    const angleRad=angle*Math.PI/180,startX=bodyX-Math.sin(angleRad)*height*.3,startY=83+Math.cos(angleRad)*height*.3;
+    const bend=clamp(physics.swing*.6+physics.swingVelocity*.05,-17,17),span=116-startY;
+    string.setAttribute("d",`M ${startX} ${startY} C ${startX+7+bend} ${startY+span*.2} ${anchorX-9-bend*.7} ${startY+span*.52} ${anchorX+2+bend*.25} ${startY+span*.76} Q ${anchorX+5-bend*.35} ${startY+span*.91} ${anchorX} 116`);
+    fill.setAttribute("width",String(anchorX-16));
+  };
+  const tick=now=>{
+    frame=0;
+    if(!visible||document.hidden)return;
+    const dt=lastTime?clamp((now-lastTime)/1000,.001,.033):.016;
+    lastTime=now;
+    const target=progress();
+    physics.airVelocity+=(target-physics.air)*90*dt;
+    physics.airVelocity*=Math.exp(-10.5*dt);
+    physics.air=clamp(physics.air+physics.airVelocity*dt,-.08,1.12);
+    physics.pulse*=Math.exp(-5.3*dt);
+    const wind=Math.sin(now*.00105)*.72+Math.sin(now*.00227+1.6)*.38;
+    physics.swingVelocity+=(-physics.swing*12-physics.swingVelocity*3.2+wind*82)*dt;
+    physics.swing=clamp(physics.swing+physics.swingVelocity*dt,-24,24);
+    paint(now);
+    frame=requestAnimationFrame(tick);
+  };
+  const start=()=>{if(!frame&&visible&&!document.hidden&&!reducedMotion){lastTime=0;frame=requestAnimationFrame(tick)}};
+  const setScale=value=>{
+    state.textScale=clamp(Math.round(value*100)/100,.9,1.6);
+    examApp.style.setProperty("--reading-scale",String(state.textScale));
+    const percent=Math.round(state.textScale*100);
+    output.textContent=percent+"%";
+    slider.setAttribute("aria-valuenow",String(percent));
+    slider.setAttribute("aria-valuetext",percent+"%");
+    if(reducedMotion){physics.air=progress();paint()}
+    else start();
+  };
+  const scaleAt=clientX=>{
+    const rect=slider.getBoundingClientRect();
+    const x=clamp((clientX-rect.left)/rect.width*320,16,304);
+    return .9+(x-16)/288*.7;
+  };
+  const applyPointer=clientX=>{
+    if(!drag)return;
+    const delta=clientX-drag.lastX,previous=progress();
+    drag.lastX=clientX;
+    setScale(scaleAt(clientX));
+    const change=progress()-previous;
+    physics.airVelocity=clamp(physics.airVelocity+change*5,-2.6,2.6);
+    physics.pulse=clamp(physics.pulse+delta*.025,-1,1);
+    physics.swingVelocity=clamp(physics.swingVelocity+delta*.7,-115,115);
+    if(!reducedMotion)start();
+  };
+  const finish=event=>{
+    if(!drag||event.pointerId!==drag.id)return;
+    applyPointer(Number.isFinite(event.clientX)?event.clientX:drag.lastX);
+    drag=null;slider.classList.remove("is-dragging");
+    localStorage.setItem("cet46-text-scale",String(state.textScale));
+    if(slider.hasPointerCapture(event.pointerId))slider.releasePointerCapture(event.pointerId);
+  };
+  slider.addEventListener("pointerdown",event=>{
+    if(event.button!==0||drag)return;
+    drag={id:event.pointerId,lastX:event.clientX};
+    slider.classList.add("is-dragging");
+    slider.setPointerCapture(event.pointerId);
+    applyPointer(event.clientX);
+    event.preventDefault();
+  });
+  slider.addEventListener("pointermove",event=>{if(drag?.id===event.pointerId)applyPointer(event.clientX)});
+  slider.addEventListener("pointerup",finish);
+  slider.addEventListener("pointercancel",finish);
+  slider.addEventListener("lostpointercapture",finish);
+  slider.addEventListener("keydown",event=>{
+    const next=event.key==="Home"?.9:event.key==="End"?1.6:event.key==="ArrowRight"||event.key==="ArrowUp"?state.textScale+.05:event.key==="ArrowLeft"||event.key==="ArrowDown"?state.textScale-.05:null;
+    if(next===null)return;
+    event.preventDefault();setScale(next);
+    localStorage.setItem("cet46-text-scale",String(state.textScale));
+  });
+  const observer=new IntersectionObserver(entries=>{
+    visible=entries[0]?.isIntersecting??false;
+    if(visible)start();else{cancelAnimationFrame(frame);frame=0}
+  });
+  observer.observe(slider);
+  const onVisibility=()=>{if(document.hidden){cancelAnimationFrame(frame);frame=0}else start()};
+  document.addEventListener("visibilitychange",onVisibility);
+  state.textScaleCleanup=()=>{cancelAnimationFrame(frame);observer.disconnect();document.removeEventListener("visibilitychange",onVisibility);drag=null};
+  paint();start();
 }
 function render(){
   state.route=currentRoute();
@@ -481,6 +728,8 @@ function render(){
   if(!state.manifest)return;
   if(app.querySelector(".emoji-arena"))destroyEmojiPhysics();
   if(state.carouselCleanup){state.carouselCleanup();state.carouselCleanup=null}
+  if(state.textScaleCleanup){state.textScaleCleanup();state.textScaleCleanup=null}
+  if(state.passageDragCleanup){state.passageDragCleanup();state.passageDragCleanup=null}
   if(state.route==="/")dashboard();
   else if(state.route==="/practice")practice();
   else if(state.route==="/library")go("/practice");
@@ -501,25 +750,33 @@ app.addEventListener("click",e=>{
   if(!t)return;
   if(t.dataset.selectLevel){activateLevel(t.dataset.selectLevel);return}
   if(t.dataset.folderIndex!==undefined){const index=Number(t.dataset.folderIndex);if(index===state.mistakeIndex){playUiSound("click");state.mistakeOpen=mistakeFolders()[index]?.examKey;state.mistakeItem=0;mistakes()}else{playUiSound("folder");state.mistakeIndex=index;updateMistakeWheel()}return}
-  if(t.dataset.folderItem!==undefined){state.mistakeItem=Number(t.dataset.folderItem);mistakes();return}
+  if(t.dataset.folderItem!==undefined){
+    const index=Number(t.dataset.folderItem),group=mistakeFolders().find(x=>x.examKey===state.mistakeOpen);
+    if(!group||index===state.mistakeItem)return;
+    state.mistakeItem=index;
+    const template=document.createElement("template");
+    template.innerHTML=mistakeDetailHtml(group);
+    app.querySelectorAll(".mistake-file").forEach((file,i)=>file.classList.toggle("selected",i===index));
+    app.querySelector(".mistake-file-detail")?.replaceWith(template.content.querySelector(".mistake-file-detail"));
+    return;
+  }
   if(t.dataset.folderPrev){rotateMistakeFolders(-1);return}
   if(t.dataset.folderNext){rotateMistakeFolders(1);return}
   if(t.dataset.folderClose){state.mistakeOpen=null;mistakes();return}
-  if(t.dataset.openQuestion){const [examKey,no]=t.dataset.openQuestion.split(":");openExam(examKey).then(()=>{const q=state.bank?.questions?.find(x=>x.no===Number(no));if(!q)return;state.activeSection=sectionFor(q);render();requestAnimationFrame(()=>document.getElementById("q"+no)?.scrollIntoView({behavior:"smooth",block:"center"}))});return}
+  if(t.dataset.openQuestion){const [examKey,no]=t.dataset.openQuestion.split(":");openExam(examKey).then(()=>{const q=state.bank?.questions?.find(x=>x.no===Number(no));if(!q)return;state.activeSection=sectionFor(q);state.focusedQuestionNo=q.no;render();requestAnimationFrame(()=>document.getElementById("q"+no)?.scrollIntoView({behavior:"smooth",block:"center"}))});return}
   if(t.dataset.openListening){openExam(t.dataset.openListening).then(()=>{state.activeSection="listening";render()});return}
   if(t.dataset.expandLevel){const stack=app.querySelector(".selector-stack");const expanded=stack?.classList.toggle("is-expanded");t.setAttribute("aria-pressed",String(!!expanded));t.setAttribute("aria-label",expanded?"缩小当前分区":"放大当前分区");return}
   if(t.dataset.uiControl){
     if(t.dataset.uiControl==="back"){if(history.length>1)history.back();else go("/practice");return}
     if(t.dataset.uiControl==="window"){toggleTextWindow();return}
-    if(t.dataset.uiControl==="large"){state.largeText=!state.largeText;app.querySelector(".exam-app")?.classList.toggle("text-large",state.largeText);t.setAttribute("aria-pressed",String(state.largeText));return}
   }
-  if(t.dataset.closeTextWindow){app.querySelector(".floating-text-window")?.remove();app.querySelector('[data-ui-control="window"]')?.setAttribute("aria-pressed","false");return}
+  if(t.dataset.closeTextWindow){closeTextWindow();return}
   if(t.dataset.radialToggle){const box=t.closest(".inline-answer"),willOpen=!box.classList.contains("is-open");closeRadialMenus();if(willOpen){box.classList.add("is-open");t.setAttribute("aria-expanded","true")}return}
   if(t.dataset.radialChoice){const [no,letter]=t.dataset.radialChoice.split(":"),trigger=t.closest(".inline-answer")?.querySelector(".inline-trigger");chooseAnswer(no,letter,t);if(trigger){trigger.textContent=letter;trigger.classList.add("has-answer");trigger.setAttribute("aria-label",`第 ${no} 题已选 ${letter}，点击重选`)}closeRadialMenus();return}
   if(t.dataset.carousel){const rail=t.closest(".selector-stage")?.querySelector(".paper-carousel"),card=rail?.querySelector(".paper-tile");if(rail&&card)rail.scrollBy({left:(t.dataset.carousel==="next"?1:-1)*(card.getBoundingClientRect().width+(parseFloat(getComputedStyle(rail).gap)||16)),behavior:"smooth"});return}
   if(t.dataset.open){openExam(t.dataset.open);return}
   if(t.dataset.route){go(t.dataset.route);return}
-  if(t.dataset.section){state.activeSection=t.dataset.section;render();window.scrollTo({top:0,behavior:"smooth"});return}
+  if(t.dataset.section){state.activeSection=t.dataset.section;state.focusedQuestionNo=null;render();window.scrollTo({top:0,behavior:"smooth"});return}
   if(t.dataset.answer){
     const [no,letter]=t.dataset.answer.split(":");
     chooseAnswer(no,letter,t);
@@ -527,7 +784,10 @@ app.addEventListener("click",e=>{
   }
   if(t.dataset.jump){
     const q=state.bank.questions.find(x=>x.no===Number(t.dataset.jump));if(!q)return;
-    state.activeSection=sectionFor(q);render();requestAnimationFrame(()=>document.getElementById("q"+q.no)?.scrollIntoView({behavior:"smooth",block:"start"}));return;
+    const nextSection=sectionFor(q),changed=state.activeSection!==nextSection;
+    state.activeSection=nextSection;state.focusedQuestionNo=q.no;
+    if(changed)render();else{app.querySelector(".question-map button.current")?.classList.remove("current");t.classList.add("current")}
+    requestAnimationFrame(()=>document.getElementById("q"+q.no)?.scrollIntoView({behavior:"smooth",block:"start"}));return;
   }
   if(t.dataset.submit){submit(t.dataset.submit);return}
   if(t.dataset.reset){if(confirm("重新练习会清除这套卷的上次成绩和答题记录，继续吗？")){delete state.data.results[t.dataset.reset];state.data.drafts[t.dataset.reset]={answers:{},startedAt:Date.now()};save();render()}return}
@@ -548,7 +808,7 @@ app.addEventListener("change",async e=>{
   }
 });
 window.addEventListener("hashchange",()=>{render();window.scrollTo(0,0)});
-window.addEventListener("keydown",event=>{if(event.key==="Escape"&&state.route==="/mistakes"&&state.mistakeOpen){state.mistakeOpen=null;mistakes()}});
+window.addEventListener("keydown",event=>{if(event.key!=="Escape")return;if(app.querySelector(".passage.is-floating,.floating-text-window")){closeTextWindow();event.preventDefault();return}if(state.route==="/mistakes"&&state.mistakeOpen){state.mistakeOpen=null;mistakes()}});
 setInterval(()=>{const clock=app.querySelector(".mistake-clock");if(clock)clock.textContent=nowTime()},30000);
 fetch("./bank/manifest.json?v="+CONTENT_VERSION).then(r=>{if(!r.ok)throw Error("题库清单不可用");return r.json()}).then(manifest=>{
   state.manifest=manifest;
